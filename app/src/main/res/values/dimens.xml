@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_corner_radius">8dp</dimen>
+    <dimen name="dimen_margin_text_alert">20dp</dimen>
+    <dimen name="dimen_xlarge">30dp</dimen>
+    <dimen name="dimen_normal_margin">16dp</dimen>
+    <dimen name="dimen_icon_alert">100dp</dimen>
+    <dimen name="size_textbutton">10sp</dimen>
+    <dimen name="sizeTitle">20sp</dimen>
+    <dimen name="sizeCardTitle">15sp</dimen>
+    <dimen name="sizeSubtitle">14sp</dimen>
+    <dimen name="sizeBody">12sp</dimen>
+    <dimen name="sizeSubBody">10sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dimen_profile_header">60dp</dimen>
+    <dimen name="height_card_edit_profile">210dp</dimen>
+    <dimen name="dimen_image_profile">130dp</dimen>
+    <dimen name="dimen_total_price">80dp</dimen>
+    <dimen name="height_comment">110dp</dimen>
+    <dimen name="dimen_alta_buttons">40dp</dimen>
+    <dimen name="card_seguimiento_height">115dp</dimen>
+    <dimen name="searchview_height">60dp</dimen>
+</resources>

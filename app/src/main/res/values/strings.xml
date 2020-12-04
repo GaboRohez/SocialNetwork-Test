@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SocialNetwork</string>
+    <!-- retrofit -->
+    <string name="retrofit_exception">At this time the service is not available, please try again later.</string>
+    <string name="retrofit_failure">At this time the service is not available, please try again later.</string>
+    <string name="retrofit_timeout">Timed out, retry request.</string>
+    <string name="retrofit_wrong_response">At this time the service is not available, please try again later.</string>
+
+    <string name="loading">Loading...</string>
+    <string name="accept">Accept</string>
 </resources>

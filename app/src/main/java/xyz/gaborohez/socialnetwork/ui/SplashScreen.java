@@ -1,11 +1,12 @@
-package xyz.gaborohez.socialnetwork;
+package xyz.gaborohez.socialnetwork.ui;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashScreen extends AppCompatActivity {
+import xyz.gaborohez.socialnetwork.ui.base.BaseActivity;
+
+public class SplashScreen extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
