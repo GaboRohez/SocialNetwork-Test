@@ -40,4 +40,16 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // RX java
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.17'
+
+    // Retrofit & gson
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    api 'com.squareup.okhttp3:logging-interceptor:4.5.0'
+    api 'com.squareup.okhttp3:okhttp:4.5.0'
+    api 'com.google.code.gson:gson:2.8.6'
 }

@@ -2,6 +2,8 @@ package xyz.gaborohez.socialnetwork.ui.base;
 
 import java.net.SocketTimeoutException;
 
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 import xyz.gaborohez.socialnetwork.R;
 
 
@@ -15,7 +17,7 @@ public abstract class BasePresenter<T> {
 
     protected T view = null;
     private BaseView baseView;
-    //private CompositeDisposable mCompositeDisposable;
+    private CompositeDisposable mCompositeDisposable;
 
     protected boolean isViewAttached() {
         return view != null;
@@ -23,16 +25,16 @@ public abstract class BasePresenter<T> {
 
     public BasePresenter(T view) {
         this.view = view;
-        //mCompositeDisposable = new CompositeDisposable();
+        mCompositeDisposable = new CompositeDisposable();
     }
 
-    /*protected void addSubscription(Disposable disposable) {
+    protected void addSubscription(Disposable disposable) {
         mCompositeDisposable.add(disposable);
-    }*/
+    }
 
     void detachView() {
         this.view = null;
-        //mCompositeDisposable.clear();
+        mCompositeDisposable.clear();
     }
 
     protected int processError(Throwable throwable) {
