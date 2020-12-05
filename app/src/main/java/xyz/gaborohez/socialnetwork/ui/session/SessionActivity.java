@@ -1,9 +1,10 @@
-package xyz.gaborohez.socialnetwork.ui;
+package xyz.gaborohez.socialnetwork.ui.session;
 
 import android.os.Bundle;
 
 import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.ui.base.BaseActivity;
+import xyz.gaborohez.socialnetwork.ui.session.login.LogInFragment;
 
 public class SessionActivity extends BaseActivity {
 
@@ -11,5 +12,7 @@ public class SessionActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session);
+
+        replaceFragment(new LogInFragment(), LogInFragment.class.getName(), R.id.contentSession);
     }
 }
