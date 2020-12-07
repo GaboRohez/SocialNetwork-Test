@@ -9,6 +9,8 @@ public interface LogInContract {
 
     interface View extends BaseView {
 
+        void emailError(String message);
+        void passwordError(String message);
     }
 
     interface Presenter {

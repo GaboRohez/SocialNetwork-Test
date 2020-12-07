@@ -2,12 +2,17 @@ package xyz.gaborohez.socialnetwork.ui.session.login.presenter;
 
 import android.util.Log;
 
+import java.net.SocketTimeoutException;
+import java.util.regex.Matcher;
+
 import retrofit2.HttpException;
+import xyz.gaborohez.socialnetwork.app.SocialApp;
 import xyz.gaborohez.socialnetwork.constants.AppConstants;
 import xyz.gaborohez.socialnetwork.data.network.model.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
 import xyz.gaborohez.socialnetwork.ui.session.login.interactor.LogInInteractor;
+import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.SUCCESS;
 
@@ -15,7 +20,7 @@ public class LogInPresenter extends BasePresenter<LogInContract.View> implements
 
     private static final String TAG = "LogInPresenter";
 
-    private LogInContract.Interactor interactor;
+    private final LogInContract.Interactor interactor;
 
     public LogInPresenter(LogInContract.View view) {
         super(view);
@@ -25,13 +30,13 @@ public class LogInPresenter extends BasePresenter<LogInContract.View> implements
     @Override
     public void logIn(LogInRequest request) {
 
-        if (request.getEmail().isEmpty()){
-
+        if (request.getEmail().isEmpty() || !AppUtils.isValidEmail(request.getEmail())){
+            view.emailError(SocialApp.resourcesManager.getEmailErrorMessage());
             return;
         }
 
         if (request.getPassword().isEmpty()){
-
+            view.passwordError(SocialApp.resourcesManager.getPasswordError());
             return;
         }
 
@@ -40,24 +45,25 @@ public class LogInPresenter extends BasePresenter<LogInContract.View> implements
                 .doAfterTerminate(() -> view.showLoader(false))
                 .subscribe(response -> {
                     if (response.getCode().equals(SUCCESS)){
-                        PreferencesManager.getInstance().saveString(AppConstants.KEY_TOKEN, response.getToken());//  se almacena el token
-                        //getUserInfo();
+                        PreferencesManager.getInstance().saveBoolean(AppConstants.isLogged, true);//  save the user token
+                        PreferencesManager.getInstance().saveString(AppConstants.KEY_TOKEN, response.getToken());//  save the user token
+                        //getUserInfo(response.getToken());
                     }else  {
-                        Log.d(TAG, "logIn: "+response.getMessage());
+                        view.showAlertDialog(response.getMessage());
                     }
                 }, throwable -> {
-                    Log.d(TAG, "logIn: "+throwable.getMessage());
-                    /*try {
-                        HttpException error = (HttpException)throwable;
-                        if (error.response().code()==400 || error.response().code()==401)
-                            view.showAlertDialog(CosApplication.androidResourceManager.getErrorAuth());
-                        else
-                            view.showAlertDialog(processError(throwable));
-                    }catch (Exception e){
-                        e.printStackTrace();
-                        view.showAlertDialog(CosApplication.androidResourceManager.getErrorServer());
-                    }*/
-
+                    if (throwable instanceof HttpException) {
+                        HttpException httpException = (HttpException)throwable;
+                        int statusCode = httpException.code();
+                        Log.d(TAG, "logIn: "+statusCode);
+                        // handle different HTTP error codes here (4xx)
+                        view.showAlertDialog(throwable.getMessage());
+                    } else if (throwable instanceof SocketTimeoutException) {
+                        // handle timeout from Retrofit
+                        view.showAlertDialog(processError(throwable));
+                    }else {
+                        view.showAlertDialog(SocialApp.resourcesManager.getErrorServer());
+                    }
                 }));
     }
 }

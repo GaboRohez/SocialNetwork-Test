@@ -57,14 +57,16 @@ public abstract class BaseFragment<T, B> extends Fragment implements BaseView{
 
     @Override
     public void showAlertDialog(String message) {
-        /*AlertDialog dialog = new AlertDialog(requireContext(), message);
-        dialog.show();*/
+        if (getActivity() instanceof BaseActivity) {
+            ((BaseActivity) getActivity()).showAlertDialog(message);
+        }
     }
 
     @Override
     public void showAlertDialog(int resId) {
-        /*AlertDialog dialog = new AlertDialog(requireContext(), getString(resId));
-        dialog.show();*/
+        if (getActivity() instanceof BaseActivity) {
+            ((BaseActivity) getActivity()).showAlertDialog(resId);
+        }
     }
 
     /*private LoaderDialog getLoader() {

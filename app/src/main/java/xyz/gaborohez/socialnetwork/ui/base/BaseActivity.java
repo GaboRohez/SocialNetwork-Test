@@ -6,6 +6,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import xyz.gaborohez.socialnetwork.R;
+
 
 public abstract class BaseActivity<P> extends AppCompatActivity implements BaseView{
 
@@ -35,14 +39,18 @@ public abstract class BaseActivity<P> extends AppCompatActivity implements BaseV
 
     @Override
     public void showAlertDialog(String message) {
-        /*AlertDialog dialog = new AlertDialog(getApplicationContext(), message);
-        dialog.show();*/
+        new MaterialAlertDialogBuilder(this)
+                .setMessage(message)
+                .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> dialogInterface.dismiss())
+                .show();
     }
 
     @Override
     public void showAlertDialog(int resId) {
-        /*AlertDialog dialog = new AlertDialog(getApplicationContext(), getString(resId));
-        dialog.show();*/
+        new MaterialAlertDialogBuilder(this)
+                .setMessage(getString(resId))
+                .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> dialogInterface.dismiss())
+                .show();
     }
 
     /*private LoaderDialog getLoader() {

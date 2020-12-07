@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
+        android:name=".app.SocialApp"
         android:theme="@style/Theme.SocialNetwork">
         <activity
             android:name=".ui.splash.SplashScreen"
@@ -23,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/Theme.SocialNetwork"
+            android:theme="@style/Theme.SocialNetwork.Session"
             android:name=".ui.session.SessionActivity">
         </activity>
 

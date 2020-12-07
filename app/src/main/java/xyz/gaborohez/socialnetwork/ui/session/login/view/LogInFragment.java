@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,11 +41,44 @@ public class LogInFragment extends BaseFragment<LogInContract.Presenter, Fragmen
     }
 
     private void setUpEvents() {
+
+        binding.layoutEmail.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                binding.layoutEmail.setError(null);
+            }
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }@Override
+            public void afterTextChanged(Editable editable) { }
+        });
+
+        binding.layoutPassword.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                binding.layoutPassword.setError(null);
+            }
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }@Override
+            public void afterTextChanged(Editable editable) { }
+        });
+
         binding.btnLogIn.setOnClickListener(v -> {
             LogInRequest request = new LogInRequest();
             request.setEmail(binding.layoutEmail.getEditText().getText().toString().trim());
             request.setPassword(binding.layoutPassword.getEditText().getText().toString().trim());
             presenter.logIn(request);
         });
+    }
+
+    @Override
+    public void emailError(String message) {
+        binding.layoutEmail.setError(message);
+    }
+
+    @Override
+    public void passwordError(String message) {
+        binding.layoutPassword.setError(message);
     }
 }
