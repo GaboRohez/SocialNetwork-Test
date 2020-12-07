@@ -18,6 +18,7 @@ import xyz.gaborohez.socialnetwork.databinding.FragmentLogInBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInContract;
 import xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInPresenter;
+import xyz.gaborohez.socialnetwork.ui.session.signin.SignInFragment;
 
 public class LogInFragment extends BaseFragment<LogInContract.Presenter, FragmentLogInBinding> implements LogInContract.View {
 
@@ -64,6 +65,7 @@ public class LogInFragment extends BaseFragment<LogInContract.Presenter, Fragmen
             public void afterTextChanged(Editable editable) { }
         });
 
+        binding.btnSignIn.setOnClickListener(v -> addFragmentInParentActivity(new SignInFragment(), SignInFragment.class.getName(), R.id.contentSession));
         binding.btnLogIn.setOnClickListener(v -> {
             LogInRequest request = new LogInRequest();
             request.setEmail(binding.layoutEmail.getEditText().getText().toString().trim());

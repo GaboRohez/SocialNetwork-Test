@@ -1,13 +1,5 @@
 
-V	java:S110
-"<This class has 9 parents which is greater than 5 authorized.(‘ÙŞàùÿÿÿÿ
-V	java:S125"<This block of commented-out lines of code should be removed.(ÀÉéÓÿÿÿÿÿ
-V	java:S1250"<This block of commented-out lines of code should be removed.(Ï™íŞüÿÿÿÿ
-f	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¼¿
-Q	java:S125&"<This block of commented-out lines of code should be removed.(‡ô®å
-P	java:S125"<This block of commented-out lines of code should be removed.(Ÿ ôQ
-k	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·®„Úÿÿÿÿÿ
-C
-java:S1185"(Remove this method to simply inherit it.(Û½Ê€şÿÿÿÿ
-Q	java:S125G"<This block of commented-out lines of code should be removed.(Ìï–—
-P	java:S125,"<This block of commented-out lines of code should be removed.(¶­·U
+P
+java:S11217".Extract the assignment out of this expression.(šã–¯şÿÿÿÿ8•ş‚öã.
+Q	java:S125J"<This block of commented-out lines of code should be removed.(Ìï–—
+]	java:S110"<This class has 9 parents which is greater than 5 authorized.(‘ÙŞàùÿÿÿÿ8ÙÌòõã.
