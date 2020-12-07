@@ -60,7 +60,7 @@ public class RetrofitClient {
         if (sRetrofit == null){
 
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
             OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
                     .connectTimeout(10, TimeUnit.SECONDS)

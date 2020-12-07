@@ -2,9 +2,7 @@ package xyz.gaborohez.socialnetwork.ui.base;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -21,17 +19,10 @@ public abstract class BaseFragment<T, B> extends Fragment implements BaseView{
     protected T presenter;
     protected B binding;
 
-    //private LoaderDialog loader;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
     }
 
     @Override
@@ -49,10 +40,9 @@ public abstract class BaseFragment<T, B> extends Fragment implements BaseView{
 
     @Override
     public void showLoader(boolean visible) {
-        /*if (visible)
-            getLoader().show();
-        else
-            getLoader().dismiss();*/
+        if (getActivity() instanceof BaseActivity) {
+            ((BaseActivity) getActivity()).showLoader(visible);
+        }
     }
 
     @Override
@@ -69,16 +59,9 @@ public abstract class BaseFragment<T, B> extends Fragment implements BaseView{
         }
     }
 
-    /*private LoaderDialog getLoader() {
-        if (loader != null)
-            return loader;
-        else
-            return loader = new LoaderDialog(requireContext());
-    }*/
-
-    protected void addFragmentInParentActivity(Fragment fragment, String TAG, int id) {
+    protected void addFragmentInParentActivity(Fragment fragment, String tag, int id) {
         if (getActivity() instanceof BaseActivity) {
-            ((BaseActivity) getActivity()).addFragment(fragment, TAG, id);
+            ((BaseActivity) getActivity()).addFragment(fragment, tag, id);
         }
     }
 

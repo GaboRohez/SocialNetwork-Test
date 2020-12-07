@@ -1,10 +1,19 @@
 package xyz.gaborohez.socialnetwork.ui.base;
 
+import android.util.Log;
+
+import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.net.SocketTimeoutException;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import okhttp3.ResponseBody;
+import retrofit2.Converter;
+import retrofit2.HttpException;
 import xyz.gaborohez.socialnetwork.R;
+import xyz.gaborohez.socialnetwork.data.network.RetrofitClient;
+import xyz.gaborohez.socialnetwork.data.network.model.ResponseError;
 
 
 /**
@@ -44,5 +53,17 @@ public abstract class BasePresenter<T> {
         } else {
             return R.string.retrofit_failure;
         }
+    }
+
+    protected String handlerError(Throwable throwable) throws IOException {
+
+        ResponseBody body = ((HttpException) throwable).response().errorBody();
+
+        Converter<ResponseBody, ResponseError> errorConverter = RetrofitClient.singleAPI().responseBodyConverter(ResponseError.class, new Annotation[0]);
+
+        ResponseError error = errorConverter.convert(body);
+        Log.i("","ERROR: " + error.getMessage());
+        return error.getMessage();
+
     }
 }

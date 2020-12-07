@@ -1,14 +1,24 @@
 package xyz.gaborohez.socialnetwork.ui.session.login.presenter;
 
 import android.util.Log;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.net.SocketTimeoutException;
 import java.util.regex.Matcher;
 
+import okhttp3.ResponseBody;
+import retrofit2.Converter;
 import retrofit2.HttpException;
 import xyz.gaborohez.socialnetwork.app.SocialApp;
 import xyz.gaborohez.socialnetwork.constants.AppConstants;
+import xyz.gaborohez.socialnetwork.data.network.RetrofitClient;
 import xyz.gaborohez.socialnetwork.data.network.model.LogInRequest;
+import xyz.gaborohez.socialnetwork.data.network.model.ResponseError;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
 import xyz.gaborohez.socialnetwork.ui.session.login.interactor.LogInInteractor;
@@ -53,11 +63,8 @@ public class LogInPresenter extends BasePresenter<LogInContract.View> implements
                     }
                 }, throwable -> {
                     if (throwable instanceof HttpException) {
-                        HttpException httpException = (HttpException)throwable;
-                        int statusCode = httpException.code();
-                        Log.d(TAG, "logIn: "+statusCode);
-                        // handle different HTTP error codes here (4xx)
-                        view.showAlertDialog(throwable.getMessage());
+                        // handle message
+                        view.showAlertDialog(handlerError(throwable));
                     } else if (throwable instanceof SocketTimeoutException) {
                         // handle timeout from Retrofit
                         view.showAlertDialog(processError(throwable));

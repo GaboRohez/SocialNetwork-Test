@@ -12,6 +12,6 @@ public class AppUtils {
 
     public static Boolean isValidEmail(String email){
         Matcher matcher = AppConstants.patternEmail.matcher(email);
-        return !matcher.matches();
+        return matcher.matches();
     }
 }

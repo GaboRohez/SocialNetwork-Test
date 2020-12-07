@@ -1,25 +1,18 @@
 package xyz.gaborohez.socialnetwork.ui.base;
 
-import android.os.Bundle;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import xyz.gaborohez.socialnetwork.R;
+import xyz.gaborohez.socialnetwork.ui.custom.LoaderDialog;
 
 
 public abstract class BaseActivity<P> extends AppCompatActivity implements BaseView{
 
     protected P presenter;
-    //private LoaderDialog loader;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    private LoaderDialog loader;
 
     @Override
     protected void onDestroy() {
@@ -31,15 +24,16 @@ public abstract class BaseActivity<P> extends AppCompatActivity implements BaseV
 
     @Override
     public void showLoader(boolean visible) {
-        /*if (visible)
+        if (visible)
             getLoader().show();
         else
-            getLoader().dismiss();*/
+            getLoader().dismiss();
     }
 
     @Override
     public void showAlertDialog(String message) {
         new MaterialAlertDialogBuilder(this)
+                .setTitle(getString(R.string.title_dialog))
                 .setMessage(message)
                 .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> dialogInterface.dismiss())
                 .show();
@@ -48,29 +42,30 @@ public abstract class BaseActivity<P> extends AppCompatActivity implements BaseV
     @Override
     public void showAlertDialog(int resId) {
         new MaterialAlertDialogBuilder(this)
+                .setTitle(getString(R.string.title_dialog))
                 .setMessage(getString(resId))
                 .setPositiveButton(getString(R.string.ok), (dialogInterface, i) -> dialogInterface.dismiss())
                 .show();
     }
 
-    /*private LoaderDialog getLoader() {
+    private LoaderDialog getLoader() {
         if (loader != null)
             return loader;
         else
             return loader = new LoaderDialog(this);
-    }*/
+    }
 
-    protected void addFragment(Fragment fragment, String TAG, int id) {
+    protected void addFragment(Fragment fragment, String tag, int id) {
         getSupportFragmentManager().beginTransaction()
-                .add(id, fragment, TAG)
-                .addToBackStack(TAG)
+                .add(id, fragment, tag)
+                .addToBackStack(tag)
                 .commitAllowingStateLoss();
     }
 
 
-    protected void replaceFragment(Fragment fragment, String TAG, int id) {
+    protected void replaceFragment(Fragment fragment, String tag, int id) {
         getSupportFragmentManager().beginTransaction()
-                .replace(id, fragment, TAG)
+                .replace(id, fragment, tag)
                 .commit();
     }
 

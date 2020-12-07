@@ -52,4 +52,6 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:4.5.0'
     api 'com.squareup.okhttp3:okhttp:4.5.0'
     api 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'org.json:json:20200518'
 }
