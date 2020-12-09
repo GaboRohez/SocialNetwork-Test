@@ -13,7 +13,7 @@ import retrofit2.Converter;
 import retrofit2.HttpException;
 import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.data.network.RetrofitClient;
-import xyz.gaborohez.socialnetwork.data.network.model.ResponseError;
+import xyz.gaborohez.socialnetwork.data.network.global.ResponseError;
 
 
 /**

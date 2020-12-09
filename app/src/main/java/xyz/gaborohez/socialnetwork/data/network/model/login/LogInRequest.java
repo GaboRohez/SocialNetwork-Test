@@ -1,4 +1,4 @@
-package xyz.gaborohez.socialnetwork.data.network.model;
+package xyz.gaborohez.socialnetwork.data.network.model.login;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

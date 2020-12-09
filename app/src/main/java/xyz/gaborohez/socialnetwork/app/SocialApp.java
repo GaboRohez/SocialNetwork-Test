@@ -40,5 +40,13 @@ public class SocialApp extends Application {
         public String getPasswordError() {
             return resources.getString(R.string.password_error_message);
         }
+
+        public String getPasswordIncorrect() {
+            return resources.getString(R.string.password_incorrect_message);
+        }
+
+        public String getPasswordErrorMessage() {
+            return resources.getString(R.string.password_not_match);
+        }
     }
 }

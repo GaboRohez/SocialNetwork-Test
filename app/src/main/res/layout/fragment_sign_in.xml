@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhite"
-    tools:context=".ui.session.signin.SignInFragment">
+    tools:context=".ui.session.signin.view.SignInFragment">
 
     <LinearLayout
         android:padding="@dimen/dimen_normal"
@@ -21,7 +21,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutName"
-            android:layout_marginTop="@dimen/dimen_normal"
+            android:layout_marginTop="@dimen/dimen_big"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -106,6 +106,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCreate"
+            android:enabled="false"
             android:layout_marginTop="@dimen/dimen_big"
             android:text="@string/create"
             android:layout_width="match_parent"

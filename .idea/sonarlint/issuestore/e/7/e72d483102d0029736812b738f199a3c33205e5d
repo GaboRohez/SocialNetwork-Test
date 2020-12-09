@@ -1,11 +1,11 @@
 
 D
 java:S1444".Make this "public static isLogged" field final(枒穑
-@
-java:S5869"*Remove duplicates in this character class.(内挒
-j
-java:S5843"TSimplify this regular expression to reduce its complexity from 88 to the 20 allowed.(内挒
 P
 java:S1118":Add a private constructor to hide the implicit public one.(硩齼
 j
+java:S5843"TSimplify this regular expression to reduce its complexity from 88 to the 20 allowed.(内挒
+j
 java:S1104"TMake isLogged a static final constant or non-public and provide accessors if needed.(枒穑
+@
+java:S5869"*Remove duplicates in this character class.(内挒

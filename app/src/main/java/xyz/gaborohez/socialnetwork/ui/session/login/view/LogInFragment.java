@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,12 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import xyz.gaborohez.socialnetwork.R;
-import xyz.gaborohez.socialnetwork.data.network.model.LogInRequest;
+import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.databinding.FragmentLogInBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInContract;
 import xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInPresenter;
-import xyz.gaborohez.socialnetwork.ui.session.signin.SignInFragment;
+import xyz.gaborohez.socialnetwork.ui.session.signin.view.SignInFragment;
 
 public class LogInFragment extends BaseFragment<LogInContract.Presenter, FragmentLogInBinding> implements LogInContract.View {
 

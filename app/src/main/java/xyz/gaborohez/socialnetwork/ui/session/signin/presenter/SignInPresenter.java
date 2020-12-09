@@ -1,50 +1,58 @@
-package xyz.gaborohez.socialnetwork.ui.session.login.presenter;
+package xyz.gaborohez.socialnetwork.ui.session.signin.presenter;
 
 import java.net.SocketTimeoutException;
 
 import retrofit2.HttpException;
 import xyz.gaborohez.socialnetwork.app.SocialApp;
 import xyz.gaborohez.socialnetwork.constants.AppConstants;
-import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
+import xyz.gaborohez.socialnetwork.data.network.model.signin.SignInRequest;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
-import xyz.gaborohez.socialnetwork.ui.session.login.interactor.LogInInteractor;
+import xyz.gaborohez.socialnetwork.ui.session.signin.interactor.SignInInteractor;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.SUCCESS;
 
-public class LogInPresenter extends BasePresenter<LogInContract.View> implements LogInContract.Presenter {
+public class SignInPresenter extends BasePresenter<SignInContract.View> implements SignInContract.Presenter{
 
-    private static final String TAG = "LogInPresenter";
+    private SignInContract.Interactor interactor;
 
-    private final LogInContract.Interactor interactor;
-
-    public LogInPresenter(LogInContract.View view) {
+    public SignInPresenter(SignInContract.View view) {
         super(view);
-        interactor = new LogInInteractor();
+        interactor = new SignInInteractor();
     }
 
     @Override
-    public void logIn(LogInRequest request) {
+    public void signIn(String name, String surname, String nickname, String email, String password, String confPassword) {
 
-        if (request.getEmail().isEmpty() || !AppUtils.isValidEmail(request.getEmail())){
+        if (!AppUtils.isValidEmail(email)){
             view.emailError(SocialApp.resourcesManager.getEmailErrorMessage());
             return;
         }
 
-        if (request.getPassword().isEmpty()){
-            view.passwordError(SocialApp.resourcesManager.getPasswordError());
+        if (password.length() < 6){
+            view.passError(SocialApp.resourcesManager.getPasswordIncorrect());
             return;
         }
 
-        addSubscription(interactor.logIn(request)
+        if (!password.equals(confPassword)){
+            view.cPassError(SocialApp.resourcesManager.getPasswordErrorMessage());
+            return;
+        }
+
+        SignInRequest request = new SignInRequest();
+        request.setName(name);
+        request.setSurname(surname);
+        request.setNick(nickname);
+        request.setEmail(email);
+        request.setPassword(password);
+
+        addSubscription(interactor.signIn(request)
                 .doOnSubscribe(disposable -> view.showLoader(true))
                 .doAfterTerminate(() -> view.showLoader(false))
                 .subscribe(response -> {
                     if (response.getCode().equals(SUCCESS)){
-                        PreferencesManager.getInstance().saveBoolean(AppConstants.isLogged, true);//  save the user token
-                        PreferencesManager.getInstance().saveString(AppConstants.KEY_TOKEN, response.getToken());//  save the user token
-                        //getUserInfo(response.getToken());
+                       view.userCreated();
                     }else  {
                         view.showAlertDialog(response.getMessage());
                     }

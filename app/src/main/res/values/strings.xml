@@ -28,5 +28,8 @@
     <string name="confirm_pass">Confirm Password</string>
     <string name="create">Create User</string>
     <string name="sign_in_title">Sign In</string>
+    <string name="password_incorrect_message">The password must contain more than 6 characters.</string>
+    <string name="password_not_match">Password confirmation does not match.</string>
+    <string name="user_created">User created successfully.</string>
 
 </resources>
