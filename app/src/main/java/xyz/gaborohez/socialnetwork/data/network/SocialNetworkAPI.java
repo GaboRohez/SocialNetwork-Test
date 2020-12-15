@@ -8,6 +8,7 @@ import retrofit2.http.POST;
 import xyz.gaborohez.socialnetwork.data.network.global.BaseResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInResponse;
+import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.signin.SignInRequest;
 
 public interface SocialNetworkAPI {
@@ -20,7 +21,7 @@ public interface SocialNetworkAPI {
     @POST("session")
     Single<LogInResponse> logIn(@Body LogInRequest request);
 
-    //@GET("user")
-    //Single<> getCurrentUser();
+    @GET("user")
+    Single<UserInfoResponse> getCurrentUser();
 
 }

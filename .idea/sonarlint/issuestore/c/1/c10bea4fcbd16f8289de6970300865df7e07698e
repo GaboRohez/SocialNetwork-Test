@@ -1,35 +1,35 @@
 
-
-java:S1186B"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
-{
-java:S1128"YRemove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentLogInBinding'.(ôœÑûÿÿÿÿ8æ‚âÃä.
-
-java:S1186P"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
-
-java:S1186h"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
-
-java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×Í³Åä.
 
 java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
 
 java:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
-]
-java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8ÆÒàÃä.
-
-java:S1186t"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
 N
 java:S1602w",Remove useless curly braces around statement(Äê„ÿøÿÿÿÿ8¼ÁëÆä.
-
-java:S1186f"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
-
-java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×Í³Åä.
-~
-java:S1128"aRemove this unused import 'xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInContract'.(õÈşä8êîàÃä.
-
-java:S1186r"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
+
+java:S1186P"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
+
+java:S1186h"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
 
 java:S1186Z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
-e
-java:S1126ƒ"BReplace this if-then-else statement by a single method invocation.(àÔäüÿÿÿÿ8ÌïİÅä.
+
+java:S1186r"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
+
+java:S1186t"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
+~
+java:S1128"aRemove this unused import 'xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInContract'.(õÈşä8êîàÃä.
+_
+java:S1126ƒ"BReplace this if-then-else statement by a single method invocation.(õÕ¥J8ÌïİÅä.
+
+java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×Í³Åä.
+
+java:S1186B"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
+
+java:S1186f"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô—½48×…ÖÅä.
+
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×Í³Åä.
 
 java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8×…ÖÅä.
+{
+java:S1128"YRemove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentLogInBinding'.(ôœÑûÿÿÿÿ8æ‚âÃä.
+]
+java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8ÆÒàÃä.

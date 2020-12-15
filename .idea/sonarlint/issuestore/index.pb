@@ -47,3 +47,5 @@ Sapp/src/main/java/xyz/gaborohez/socialnetwork/data/network/global/BaseResponse.
 Xapp/src/main/java/xyz/gaborohez/socialnetwork/ui/session/signin/view/SignInFragment.java,c\1\c10bea4fcbd16f8289de6970300865df7e07698e
 p
 @app/src/main/java/xyz/gaborohez/socialnetwork/app/SocialApp.java,7\8\78bdc3f7be1c2f73ff8a3d554a9bc67ee4a808d7
+Œ
+\app/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/login/UserInfoResponse.java,5\8\588cb0ea95fdeeef981d90fe9df8ee9fb89131be

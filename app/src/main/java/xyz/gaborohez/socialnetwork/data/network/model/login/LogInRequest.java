@@ -16,7 +16,7 @@ public class LogInRequest {
     private String email;
 
     public LogInRequest() {
-        this.gettoken = false;
+        this.gettoken = true;
     }
 
     public boolean getGettoken() {

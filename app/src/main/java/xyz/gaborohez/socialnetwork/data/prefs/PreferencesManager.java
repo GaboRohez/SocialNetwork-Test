@@ -8,6 +8,8 @@ import com.google.gson.Gson;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import xyz.gaborohez.socialnetwork.data.models.User;
+
 public class PreferencesManager {
     private static PreferencesManager INSTANCE = null;
     private SharedPreferences sharedPreferences;
@@ -51,6 +53,20 @@ public class PreferencesManager {
 
     public Boolean getBoolean(String key) {
         return sharedPreferences.getBoolean(key, false);
+    }
+
+    public void saveUser(User user){
+        Gson gson = new Gson();
+        String json = gson.toJson(user);
+        sharedPreferences.edit()
+                .putString("user", json)
+                .apply();
+    }
+
+    public User getUser(){
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("user", "");
+        return gson.fromJson(json, User.class);
     }
 
     public void removePreferences() {

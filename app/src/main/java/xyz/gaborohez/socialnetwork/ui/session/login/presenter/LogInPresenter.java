@@ -1,5 +1,7 @@
 package xyz.gaborohez.socialnetwork.ui.session.login.presenter;
 
+import android.util.Log;
+
 import java.net.SocketTimeoutException;
 
 import retrofit2.HttpException;
@@ -42,9 +44,34 @@ public class LogInPresenter extends BasePresenter<LogInContract.View> implements
                 .doAfterTerminate(() -> view.showLoader(false))
                 .subscribe(response -> {
                     if (response.getCode().equals(SUCCESS)){
-                        PreferencesManager.getInstance().saveBoolean(AppConstants.isLogged, true);//  save the user token
-                        PreferencesManager.getInstance().saveString(AppConstants.KEY_TOKEN, response.getToken());//  save the user token
-                        //getUserInfo(response.getToken());
+                        PreferencesManager.getInstance().saveString(AppConstants.KEY_TOKEN, response.getToken());   //  save the user token
+                        getUserInfo();
+                    }else  {
+                        view.showAlertDialog(response.getMessage());
+                    }
+                }, throwable -> {
+                    if (throwable instanceof HttpException) {
+                        // handle message
+                        view.showAlertDialog(handlerError(throwable));
+                    } else if (throwable instanceof SocketTimeoutException) {
+                        // handle timeout from Retrofit
+                        view.showAlertDialog(processError(throwable));
+                    }else {
+                        view.showAlertDialog(SocialApp.resourcesManager.getErrorServer());
+                    }
+                }));
+    }
+
+    private void getUserInfo() {
+        addSubscription(interactor.getCurrentUser()
+                .doOnSubscribe(disposable -> view.showLoader(true))
+                .doAfterTerminate(() -> view.showLoader(false))
+                .subscribe(response -> {
+                    if (response.getCode().equals(SUCCESS)){
+                        PreferencesManager.getInstance().saveUser(response.getUser());
+                        PreferencesManager.getInstance().saveBoolean(AppConstants.isLogged, true);
+
+                        view.openMain();
                     }else  {
                         view.showAlertDialog(response.getMessage());
                     }

@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
@@ -81,5 +82,10 @@ public class LogInFragment extends BaseFragment<LogInContract.Presenter, Fragmen
     @Override
     public void passwordError(String message) {
         binding.layoutPassword.setError(message);
+    }
+
+    @Override
+    public void openMain() {
+        Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show();
     }
 }

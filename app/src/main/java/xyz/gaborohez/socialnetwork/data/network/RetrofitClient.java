@@ -38,7 +38,7 @@ public class RetrofitClient {
                         @Override
                         public Response intercept(@NotNull Chain chain) throws IOException {
                             Request newRequest  = chain.request().newBuilder()
-                                    .addHeader("Authorization", " Bearer " + PreferencesManager.getInstance().getString(AppConstants.KEY_TOKEN))
+                                    .addHeader(AppConstants.Authorization, PreferencesManager.getInstance().getString(AppConstants.KEY_TOKEN))
                                     .build();
                             return chain.proceed(newRequest);
                         }
