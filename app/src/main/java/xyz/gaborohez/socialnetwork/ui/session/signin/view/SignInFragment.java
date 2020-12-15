@@ -128,7 +128,7 @@ public class SignInFragment extends BaseFragment<SignInContract.Presenter, Fragm
     }
 
     private void checkEnableButton(){
-        if (binding.layoutName.getEditText().getText().toString().isEmpty() && !binding.layoutSurname.getEditText().getText().toString().isEmpty() && !binding.layoutNickname.getEditText().getText().toString().isEmpty() && !binding.layoutEmail.getEditText().getText().toString().isEmpty() && !binding.layoutPass.getEditText().getText().toString().isEmpty() && !binding.layoutCPass.getEditText().getText().toString().isEmpty()){
+        if (!binding.layoutName.getEditText().getText().toString().isEmpty() && !binding.layoutSurname.getEditText().getText().toString().isEmpty() && !binding.layoutNickname.getEditText().getText().toString().isEmpty() && !binding.layoutEmail.getEditText().getText().toString().isEmpty() && !binding.layoutPass.getEditText().getText().toString().isEmpty() && !binding.layoutCPass.getEditText().getText().toString().isEmpty()){
             binding.btnCreate.setEnabled(true);
         }else
             binding.btnCreate.setEnabled(false);

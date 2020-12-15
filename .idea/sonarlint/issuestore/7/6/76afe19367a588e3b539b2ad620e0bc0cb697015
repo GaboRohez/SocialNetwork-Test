@@ -1,26 +1,4 @@
 
-S
-java:S1128"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8£Ä“øã.
+X	java:S125/"<This block of commented-out lines of code should be removed.( øÂó8¶Íòõã.
 I
 java:S1068"'Remove this unused "TAG" private field.(ˆÓ—±ûÿÿÿÿ8Š÷ªøã.
-N
-java:S1128"1Remove this unused import 'okhttp3.ResponseBody'.(Õ«ø8î‹¶øã.
-q
-java:S1128"TRemove this unused import 'xyz.gaborohez.socialnetwork.data.network.RetrofitClient'.(é­Ü™8î‹¶øã.
-R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8î‹¶øã.
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8î‹¶øã.
-N
-java:S1128"1Remove this unused import 'com.google.gson.Gson'.(–§8ˆĞ–øã.
-R
-java:S1128"0Remove this unused import 'retrofit2.Converter'.(İì¶üÿÿÿÿ8î‹¶øã.
-{
-java:S1128	"YRemove this unused import 'xyz.gaborohez.socialnetwork.data.network.model.ResponseError'.(²¶öãşÿÿÿÿ8î‹¶øã.
-Q
-java:S1128"4Remove this unused import 'java.util.regex.Matcher'.(ëÅ›ã8À´Ö÷ã.
-^
-java:S1128"<Remove this unused import 'java.lang.annotation.Annotation'.(¦Ÿàáûÿÿÿÿ8î‹¶øã.
-Z
-java:S1128"8Remove this unused import 'com.google.gson.GsonBuilder'.(”«à¬ÿÿÿÿÿ8ˆĞ–øã.
-X	java:S125/"<This block of commented-out lines of code should be removed.( øÂó8¶Íòõã.
