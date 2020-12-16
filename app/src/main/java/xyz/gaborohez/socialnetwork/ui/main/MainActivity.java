@@ -12,7 +12,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getSupportActionBar().setElevation(0);
         replaceFragment(new TabbedFragment(), TabbedFragment.class.getName(), R.id.contentMain);
     }
 }

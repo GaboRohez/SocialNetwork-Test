@@ -7,16 +7,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.tabbed.TabbedFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        app:title="@string/app_name"
-        app:titleTextColor="@color/colorPrimaryVariant"
-        android:layout_height="wrap_content"
-        android:background="@color/colorWhite"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/main_content"
         android:layout_width="match_parent"
@@ -30,8 +20,8 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
-                android:background="@color/colorWhite"
-                app:tabIndicatorColor="@color/colorPrimaryVariant"
+                android:background="@color/colorPrimaryVariant"
+                app:tabIndicatorColor="@color/colorAccent"
                 app:tabIconTint="@color/my_color_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
