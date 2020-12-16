@@ -49,3 +49,21 @@ p
 @app/src/main/java/xyz/gaborohez/socialnetwork/app/SocialApp.java,7\8\78bdc3f7be1c2f73ff8a3d554a9bc67ee4a808d7
 Œ
 \app/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/login/UserInfoResponse.java,5\8\588cb0ea95fdeeef981d90fe9df8ee9fb89131be
+s
+Capp/src/main/java/xyz/gaborohez/socialnetwork/data/models/User.java,b\d\bd63106fa3edc9b6bba57bef9e62cb4bda43bc5a
+€
+Papp/src/main/java/xyz/gaborohez/socialnetwork/data/prefs/PreferencesManager.java,9\5\951b126a2f42c8a8b14400ea0f2abc19091990d7
+w
+Gapp/src/main/java/xyz/gaborohez/socialnetwork/ui/main/MainActivity.java,8\6\8667483c012c8eda2bd00468b6b1a29581ae3b68
+y
+Iapp/src/main/java/xyz/gaborohez/socialnetwork/ui/splash/SplashScreen.java,d\8\d8c0fe61441911d193bb5dd0adb36e2c6540fd71
+}
+Mapp/src/main/java/xyz/gaborohez/socialnetwork/ui/profile/ProfileFragment.java,0\b\0b65e683d61068969ad0f1f756c4af84cdd29cd6
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+
+Oapp/src/main/java/xyz/gaborohez/socialnetwork/ui/settings/SettingsFragment.java,7\f\7fbcc323d28e3e9d3518954398cc7d802199d25a
+z
+Japp/src/main/java/xyz/gaborohez/socialnetwork/ui/tabbed/TabbedAdapter.java,7\d\7d69eb765c54dee6e9d77d1ecf4949c79d8dab72
+{
+Kapp/src/main/java/xyz/gaborohez/socialnetwork/ui/tabbed/TabbedFragment.java,4\6\46045fdca75444e3924797256ca797388b178a59

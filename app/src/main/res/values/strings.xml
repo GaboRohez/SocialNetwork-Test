@@ -31,5 +31,7 @@
     <string name="password_incorrect_message">The password must contain more than 6 characters.</string>
     <string name="password_not_match">Password confirmation does not match.</string>
     <string name="user_created">User created successfully.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

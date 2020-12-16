@@ -1,5 +1,6 @@
 package xyz.gaborohez.socialnetwork.ui.session.login.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.databinding.FragmentLogInBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
+import xyz.gaborohez.socialnetwork.ui.main.MainActivity;
 import xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInContract;
 import xyz.gaborohez.socialnetwork.ui.session.login.presenter.LogInPresenter;
 import xyz.gaborohez.socialnetwork.ui.session.signin.view.SignInFragment;
@@ -87,5 +89,7 @@ public class LogInFragment extends BaseFragment<LogInContract.Presenter, Fragmen
     @Override
     public void openMain() {
         Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getActivity(), MainActivity.class));
+        getActivity().finish();
     }
 }

@@ -2,21 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="xyz.gaborohez.socialnetwork">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".app.SocialApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:name=".app.SocialApp"
-        android:theme="@style/Theme.SocialNetwork">
+        android:theme="@style/Theme.SocialNetwork.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:theme="@style/Theme.SocialNetwork.Clasic"
+            android:name=".ui.main.MainActivity"/>
         <activity
             android:name=".ui.splash.SplashScreen"
-            android:theme="@style/SplashTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,10 +27,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/Theme.SocialNetwork.Session"
-            android:name=".ui.session.SessionActivity">
-        </activity>
-
+            android:name=".ui.session.SessionActivity"
+            android:theme="@style/Theme.SocialNetwork.NoActionBar"/>
     </application>
 
 </manifest>
