@@ -14,6 +14,10 @@
 
     <!-- dialog -->
     <string name="ok">Ok</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title_log_out">Are you sure?</string>
+    <string name="body_log_out">You are about to log out, do you want to continue?</string>
 
     <!-- log in -->
     <string name="email">Email</string>

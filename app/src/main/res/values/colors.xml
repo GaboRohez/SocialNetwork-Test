@@ -8,9 +8,7 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorLight">#3EA0AC</color>
-    <color name="colorGray">#9C9C9C</color>
-    <color name="colorLightGray">#E1E1E1</color>
-    <color name="colorBGNotes">#F4F4F4</color>
-    <color name="colorBGEditText">#97E1F5FE</color>
-    <color name="colorRecyclerBG">#F7F7F7</color>
+    <color name="colorGray">#2AC5C5C5</color>
+    <color name="colorLightGray">#C5C5C5</color>
+    <color name="colorBackground">#F4F4F4</color>
 </resources>

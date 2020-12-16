@@ -1,5 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- SplashScreen application theme. -->
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
+    </style>
+    <!-- Session application theme. -->
     <style name="Theme.SocialNetwork.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -15,10 +21,10 @@
         <item name="android:fontFamily">@font/nexa_family</item>
 
     </style>
-
+    <!-- Main application theme. -->
     <style name="Theme.SocialNetwork.Clasic" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimary">@color/colorPrimaryVariant</item>
         <item name="colorPrimaryVariant">@color/colorWhite</item>
         <item name="colorOnPrimary">@color/colorPrimaryVariant</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -33,9 +39,9 @@
 
     </style>
 
-    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/background_splash</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>
