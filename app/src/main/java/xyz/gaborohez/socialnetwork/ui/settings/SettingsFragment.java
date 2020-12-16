@@ -22,6 +22,7 @@ import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentSettingsBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
+import xyz.gaborohez.socialnetwork.ui.profile.ProfileFragment;
 import xyz.gaborohez.socialnetwork.ui.session.SessionActivity;
 
 public class SettingsFragment extends BaseFragment {
@@ -52,6 +53,9 @@ public class SettingsFragment extends BaseFragment {
     }
 
     private void setUpEvents(){
+
+        binding.btnProfile.setOnClickListener(v -> addFragmentInParentActivity(new ProfileFragment(), ProfileFragment.class.getName(), R.id.contentMain));
+
         binding.btnLogOut.setOnClickListener(v -> {
 
             new MaterialAlertDialogBuilder(getContext())

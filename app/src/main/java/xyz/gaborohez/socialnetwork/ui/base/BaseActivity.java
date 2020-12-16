@@ -2,6 +2,8 @@ package xyz.gaborohez.socialnetwork.ui.base;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -56,10 +58,18 @@ public abstract class BaseActivity<P> extends AppCompatActivity implements BaseV
     }
 
     protected void addFragment(Fragment fragment, String tag, int id) {
-        getSupportFragmentManager().beginTransaction()
+        /*getSupportFragmentManager().beginTransaction()
                 .add(id, fragment, tag)
                 .addToBackStack(tag)
-                .commitAllowingStateLoss();
+                .commitAllowingStateLoss();*/
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+        //fragmentTransaction.setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_up, R.anim.slide_in_bottom,R.anim.slide_out_bottom );
+        fragmentTransaction.add(id, fragment, tag);
+        fragmentTransaction.addToBackStack(tag);
+        fragmentTransaction.commit();
     }
 
 

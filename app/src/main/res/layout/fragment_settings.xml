@@ -21,6 +21,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/btnProfile"
             android:layout_marginEnd="@dimen/dimen_normal"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
