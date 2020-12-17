@@ -42,7 +42,7 @@
 
             <TextView
                 android:id="@+id/tvName"
-                android:text="Gabo Rohez"
+                tools:text="@tools:sample/full_names"
                 android:layout_toEndOf="@+id/ivProfile"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textStyle="bold"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:text="See your profile"
+                android:text="@string/see_your_profile"
                 android:layout_toEndOf="@+id/ivProfile"
                 android:layout_below="@+id/tvName"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"

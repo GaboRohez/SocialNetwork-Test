@@ -3,6 +3,7 @@ package xyz.gaborohez.socialnetwork.constants;
 import java.util.regex.Pattern;
 
 public class AppConstants {
+    public static final int EXPIRED = 401;
     public static final String SUCCESS = "00";
     public static String isLogged = "isLogged";
     public static final String KEY_TOKEN = "key_token";

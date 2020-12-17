@@ -1,18 +1,5 @@
 
-]
-java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8Æù–Åæ.
-c
-java:S1128	"GRemove this unused import 'androidx.fragment.app.FragmentPagerAdapter'.(ş÷S8Æù–Åæ.
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Æù–Åæ.
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Æù–Åæ.
-d
-java:S1128"BRemove this unused import 'androidx.fragment.app.FragmentManager'.(¯­ë‹ıÿÿÿÿ8Æù–Åæ.
+b
+java:S18741"@Remove this use of "setOnTabSelectedListener"; it is deprecated.(ç–ˆùÿÿÿÿ8ƒÑèæ.
 Q
-java:S3740"/Provide the parametrized type for this generic.(Ôƒ“İÿÿÿÿÿ8Õä‰¾æ.
-]
-java:S1128"@Remove this unused import 'androidx.viewpager.widget.ViewPager'.(¨Ù›æ8Óè˜Åæ.
-`
-java:S1128
-"CRemove this unused import 'androidx.viewpager.widget.PagerAdapter'.(ø¶»É8°—Åæ.
+java:S3740"/Provide the parametrized type for this generic.(Ôƒ“İÿÿÿÿÿ8ƒÑèæ.

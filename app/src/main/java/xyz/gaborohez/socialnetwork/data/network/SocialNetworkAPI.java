@@ -6,6 +6,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import xyz.gaborohez.socialnetwork.data.network.global.BaseResponse;
+import xyz.gaborohez.socialnetwork.data.network.model.follows.FollowsResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;
@@ -23,5 +24,8 @@ public interface SocialNetworkAPI {
 
     @GET("user")
     Single<UserInfoResponse> getCurrentUser();
+
+    @GET("counters")
+    Single<FollowsResponse> getCounters();
 
 }

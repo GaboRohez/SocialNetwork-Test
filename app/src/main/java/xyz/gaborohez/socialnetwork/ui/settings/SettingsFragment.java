@@ -1,14 +1,11 @@
 package xyz.gaborohez.socialnetwork.ui.settings;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +19,7 @@ import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentSettingsBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
-import xyz.gaborohez.socialnetwork.ui.profile.ProfileFragment;
+import xyz.gaborohez.socialnetwork.ui.profile.view.ProfileFragment;
 import xyz.gaborohez.socialnetwork.ui.session.SessionActivity;
 
 public class SettingsFragment extends BaseFragment {
@@ -48,7 +45,7 @@ public class SettingsFragment extends BaseFragment {
         User user = PreferencesManager.getInstance().getUser();
         binding.tvName.setText(user.getName());
         if (user.getImage() != null)
-            Glide.with(getContext()).load(AppConstants.BASE_IMAGE_URL+user.getImage()).into(binding.ivProfile);
+            Glide.with(getContext()).asBitmap().load(user.getImage()).into(binding.ivProfile);
 
     }
 

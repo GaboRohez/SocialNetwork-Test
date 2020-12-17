@@ -1,5 +1,9 @@
 package xyz.gaborohez.socialnetwork.data.models;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,9 +18,16 @@ public class User {
     private String nick;
     private String surname;
     private String name;
+    private String cover;
 
-    public String getImage() {
-        return image;
+    public Bitmap getImage() {
+        if (image != null){
+            byte[] decodedString = Base64.decode(image, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        }else {
+            return null;
+        }
+
     }
 
     public void setImage(String image) {
@@ -71,16 +82,30 @@ public class User {
         this.id = id;
     }
 
+    public Bitmap getCover() {
+        if (cover != null){
+            byte[] decodedString = Base64.decode(cover, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        }else {
+            return null;
+        }
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "image='" + image + '\'' +
-                ", role='" + role + '\'' +
-                ", email='" + email + '\'' +
-                ", nick='" + nick + '\'' +
-                ", surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", id='" + id + '\'' +
+        return "User{" +"\n"+
+                "cover='" + cover + '\'' +"\n"+
+                "image='" + image + '\'' +"\n"+
+                ", role='" + role + '\'' +"\n"+
+                ", email='" + email + '\'' +"\n"+
+                ", nick='" + nick + '\'' +"\n"+
+                ", surname='" + surname + '\'' +"\n"+
+                ", name='" + name + '\'' +"\n"+
+                ", id='" + id + '\'' +"\n"+
                 '}';
     }
 }

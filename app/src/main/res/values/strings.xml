@@ -5,6 +5,7 @@
     <string name="retrofit_failure">At this time the service is not available, please try again later.</string>
     <string name="retrofit_timeout">Timed out, retry request.</string>
     <string name="retrofit_wrong_response">At this time the service is not available, please try again later.</string>
+    <string name="session_expired">Session expired</string>
 
     <!-- Errors -->
     <string name="title_dialog">Oops. Something went wrong.</string>
@@ -35,7 +36,15 @@
     <string name="password_incorrect_message">The password must contain more than 6 characters.</string>
     <string name="password_not_match">Password confirmation does not match.</string>
     <string name="user_created">User created successfully.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- settings -->
+    <string name="see_your_profile">See your profile</string>
+
+    <!-- log in -->
+    <string name="user_name">%1$s %2$s</string>
+    <string name="followings">Followings</string>
+    <string name="followers">Followers</string>
+    <string name="posts">Posts</string>
+
 
 </resources>

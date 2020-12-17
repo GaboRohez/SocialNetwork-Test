@@ -1,5 +1,8 @@
 package xyz.gaborohez.socialnetwork.ui.base;
 
+import android.content.Intent;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -8,7 +11,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import xyz.gaborohez.socialnetwork.R;
+import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.ui.custom.LoaderDialog;
+import xyz.gaborohez.socialnetwork.ui.session.SessionActivity;
 
 
 public abstract class BaseActivity<P> extends AppCompatActivity implements BaseView{
@@ -81,13 +86,10 @@ public abstract class BaseActivity<P> extends AppCompatActivity implements BaseV
 
     @Override
     public void expiredToken() {
-        /*List<GenericCatalog> auxCenters = AppUtils.getBusinessCenter();
-
         PreferencesManager.getInstance().removePreferences();
-        PreferencesManager.getInstance().saveArrayList(auxCenters, AppConstants.KEY_BUSINESS_CENTERS);
         startActivity(new Intent(this, SessionActivity.class));
         finish();
 
-        Toast.makeText(this, getString(R.string.session_expired), Toast.LENGTH_SHORT).show();*/
+        Toast.makeText(this, getString(R.string.session_expired), Toast.LENGTH_SHORT).show();
     }
 }

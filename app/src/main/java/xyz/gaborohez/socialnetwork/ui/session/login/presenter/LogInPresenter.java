@@ -1,7 +1,5 @@
 package xyz.gaborohez.socialnetwork.ui.session.login.presenter;
 
-import android.util.Log;
-
 import java.net.SocketTimeoutException;
 
 import retrofit2.HttpException;

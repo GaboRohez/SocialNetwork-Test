@@ -4,4 +4,5 @@
     <dimen name="dimen_small">8dp</dimen>
     <dimen name="dimen_normal">16dp</dimen>
     <dimen name="dimen_big">24dp</dimen>
+    <dimen name="dimen_floating_camera">30dp</dimen>
 </resources>
