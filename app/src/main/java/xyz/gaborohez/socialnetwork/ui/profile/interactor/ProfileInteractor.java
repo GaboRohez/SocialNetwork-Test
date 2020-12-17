@@ -5,7 +5,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import xyz.gaborohez.socialnetwork.data.network.RetrofitClient;
 import xyz.gaborohez.socialnetwork.data.network.SocialNetworkAPI;
+import xyz.gaborohez.socialnetwork.data.network.global.BaseResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.follows.FollowsResponse;
+import xyz.gaborohez.socialnetwork.data.network.model.imageprofile.UpdateImageRequest;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract;
 
 public class ProfileInteractor implements ProfileContract.Interactor{
@@ -14,6 +16,24 @@ public class ProfileInteractor implements ProfileContract.Interactor{
         return RetrofitClient.api()
                 .create(SocialNetworkAPI.class)
                 .getCounters()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public Single<BaseResponse> updateImageProfile(UpdateImageRequest request) {
+        return RetrofitClient.api()
+                .create(SocialNetworkAPI.class)
+                .updateImageProfile(request)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public Single<BaseResponse> updateImageCover(UpdateImageRequest request) {
+        return RetrofitClient.api()
+                .create(SocialNetworkAPI.class)
+                .updateImageCover(request)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

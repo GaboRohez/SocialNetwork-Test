@@ -5,8 +5,10 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import xyz.gaborohez.socialnetwork.data.network.global.BaseResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.follows.FollowsResponse;
+import xyz.gaborohez.socialnetwork.data.network.model.imageprofile.UpdateImageRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;
@@ -27,5 +29,11 @@ public interface SocialNetworkAPI {
 
     @GET("counters")
     Single<FollowsResponse> getCounters();
+
+    @PUT("user-image")
+    Single<BaseResponse> updateImageProfile(@Body UpdateImageRequest request);
+
+    @PUT("user-cover")
+    Single<BaseResponse> updateImageCover(@Body UpdateImageRequest request);
 
 }
