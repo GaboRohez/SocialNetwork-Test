@@ -93,3 +93,5 @@ Dapp/src/main/java/xyz/gaborohez/socialnetwork/ui/utils/FileUtil.java,e\8\e8c60
 Qapp/src/main/java/xyz/gaborohez/socialnetwork/ui/utils/CompressorBitmapImage.java,3\b\3b75894384d02d618b0ceecc0c56ade266c114ed
 •
 eapp/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/imageprofile/UpdateImageRequest.java,9\4\947760c43bb057e5e2970848386d8c76e205fec9
+w
+Gapp/src/main/java/xyz/gaborohez/socialnetwork/ui/post/PostFragment.java,7\3\73e3d1c3c598d60b57f01bf079796a4aaae7d3a4

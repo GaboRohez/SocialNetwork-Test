@@ -29,6 +29,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    lintOptions {
+        disable 'NonConstantResourceId'
+    }
 }
 
 dependencies {

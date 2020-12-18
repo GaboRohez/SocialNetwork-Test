@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -36,12 +37,13 @@ import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
+import xyz.gaborohez.socialnetwork.ui.post.PostFragment;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 import xyz.gaborohez.socialnetwork.ui.utils.FileUtil;
 
-public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, FragmentProfileBinding> implements ProfileContract.View {
+public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, FragmentProfileBinding> implements ProfileContract.View, View.OnClickListener {
 
     private User user;
     private boolean isProfile;
@@ -89,6 +91,33 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
             isProfile = false;
             showImageDialog();
         });
+
+        binding.btnProfile.setOnClickListener(this);
+        binding.btnCover.setOnClickListener(this);
+        binding.btnComment.setOnClickListener(this);
+        binding.btnImage.setOnClickListener(this);
+        binding.btnLocation.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnProfile:
+                isProfile = true;
+                showImageDialog();
+                break;
+            case R.id.btnCover:
+                isProfile = false;
+                showImageDialog();
+                break;
+            case R.id.btnComment:
+            case R.id.btnImage:
+            case R.id.btnLocation:
+                openFragmentComment();
+                break;
+            default:
+                return;
+        }
     }
 
     private void setUpCover() {
@@ -119,14 +148,11 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
         new MaterialAlertDialogBuilder(getContext())
                 .setTitle(getString(R.string.select_option))
-                .setItems(options, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (which == 0){
-                            openGallery();
-                        }else {
-                            openCamera();
-                        }
+                .setItems(options, (dialog, which) -> {
+                    if (which == 0){
+                        openGallery();
+                    }else {
+                        openCamera();
                     }
                 }).show();
     }
@@ -159,6 +185,12 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
             intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
             startActivityForResult(intent, CAMERA_REQUEST_CODE);
         }
+    }
+
+    private void openFragmentComment() {
+        PostFragment fragment = new PostFragment();
+        fragment.setTargetFragment(this, 1);
+        addFragmentInParentActivity(fragment, PostFragment.class.getName(), R.id.contentMain);
     }
 
     private File createPhotoFile() throws IOException {
@@ -199,6 +231,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
             }catch (Exception e){
                 e.printStackTrace();
             }
+            return;
         }
         //  image from camera
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK){
@@ -214,6 +247,12 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
             }catch (Exception e){
                 e.printStackTrace();
             }
+            return;
+        }
+
+        if (requestCode == 1){
+            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+            return;
         }
     }
 
