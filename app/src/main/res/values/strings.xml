@@ -3,13 +3,14 @@
     <!-- retrofit -->
     <string name="retrofit_exception">At this time the service is not available, please try again later.</string>
     <string name="retrofit_failure">At this time the service is not available, please try again later.</string>
-    <string name="retrofit_timeout">Timed out, retry request.</string>
+    <string name="retrofit_timeout">The waiting time was exceeded, check your connection and try again later.</string>
+    <!-- <string name="retrofit_timeout">Timed out, retry request.</string> -->
     <string name="retrofit_wrong_response">At this time the service is not available, please try again later.</string>
     <string name="session_expired">Session expired</string>
 
     <!-- Errors -->
     <string name="title_dialog">Oops. Something went wrong.</string>
-    <string name="server_error">An error occurred with the server, please try again later.</string>
+    <string name="server_error">An error occurred with the server, please verify your connection and try again later.</string>
     <string name="email_error_message">Please enter your email address in format yourname@example.com</string>
     <string name="password_error_message">Please enter your password</string>
 
@@ -44,11 +45,15 @@
     <!-- settings -->
     <string name="see_your_profile">See your profile</string>
 
-    <!-- log in -->
+    <!-- profile -->
     <string name="user_name">%1$s %2$s</string>
     <string name="followings">Followings</string>
     <string name="followers">Followers</string>
     <string name="posts">Posts</string>
+    <string name="post">Post</string>
+    <string name="what_are_you_thinking">What are you thinking?</string>
+    <string name="photo">Photo</string>
+    <string name="location">Location</string>
 
 
 </resources>

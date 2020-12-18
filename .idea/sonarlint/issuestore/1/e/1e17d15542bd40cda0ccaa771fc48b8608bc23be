@@ -1,3 +1,9 @@
 
+E
+java:S1604z"(Make this anonymous inner class a lambda(Ø“‚¹8ê³æç.
+`
+java:S2259»"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8 Şğç.
+	java:S1164"^Rename this field "CAMERA_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÀø ùÿÿÿÿ8ó™Èç.
 ]
-java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8’Èœìæ.
+java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8’Èœìæ.
+{	java:S1165"_Rename this field "GALLERY_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÜ÷à8ó™Èç.

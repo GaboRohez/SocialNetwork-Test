@@ -1,7 +1,6 @@
 
-]	java:S110"<This class has 9 parents which is greater than 5 authorized.(‘ÙÞàùÿÿÿÿ8Ý¥„ëæ.
-]	java:S125E"<This block of commented-out lines of code should be removed.(ÙØãïùÿÿÿÿ8†ó†ëæ.
+]	java:S110"<This class has 9 parents which is greater than 5 authorized.(‘ÙÞàùÿÿÿÿ8Ý¥„ëæ.
+]	java:S125E"<This block of commented-out lines of code should be removed.(ŸÕæ¬þÿÿÿÿ8ÌŒ‰ëæ.
 P
-java:S11219".Extract the assignment out of this expression.(šã–¯þÿÿÿÿ8Ý¥„ëæ.
-]	java:S125@"<This block of commented-out lines of code should be removed.(ŸÕæ¬þÿÿÿÿ8ÌŒ‰ëæ.
-X	java:S125T"<This block of commented-out lines of code should be removed.(Ìï–—8Ý¥„ëæ.
+java:S1121>".Extract the assignment out of this expression.(šã–¯þÿÿÿÿ8Ý¥„ëæ.
+]	java:S125J"<This block of commented-out lines of code should be removed.(ÙØãïùÿÿÿÿ8†ó†ëæ.

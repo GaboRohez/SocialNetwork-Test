@@ -105,8 +105,10 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
         if (user.getCover() != null)
             Glide.with(getContext()).asBitmap().load(user.getCover()).into(binding.ivCover);
 
-        if (user.getImage() != null)
+        if (user.getImage() != null){
             Glide.with(getContext()).asBitmap().load(user.getImage()).into(binding.ivProfile);
+            Glide.with(getContext()).asBitmap().load(user.getImage()).into(binding.ivProfileComment);
+        }
 
         binding.tvName.setText(String.format(getString(R.string.user_name), user.getName(), user.getSurname()));
         binding.tvNickname.setText(user.getNick());
@@ -173,6 +175,9 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
     @Override
     public void setCounters(Follow result) {
+        binding.contentCounters.setVisibility(View.VISIBLE);
+        binding.contentPost.setVisibility(View.VISIBLE);
+
         binding.postCounter.setText(String.valueOf(result.getPost()));
         binding.followingCounter.setText(String.valueOf(result.getFollowing()));
         binding.followersCounter.setText(String.valueOf(result.getFollowed()));
@@ -218,6 +223,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
             user.setImage(imageProfile);
             PreferencesManager.getInstance().saveUser(user);
             Glide.with(requireContext()).load(Base64.decode(imageProfile, Base64.DEFAULT)).into(binding.ivProfile);
+            Glide.with(requireContext()).load(Base64.decode(imageProfile, Base64.DEFAULT)).into(binding.ivProfileComment);
         } else{
             user.setCover(imageCover);
             PreferencesManager.getInstance().saveUser(user);
