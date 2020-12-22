@@ -1,13 +1,15 @@
 
-]
-java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8’Èœìæ.
-{	java:S1167"_Rename this field "GALLERY_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÜ÷à8ó™ÈŽç.
-`
-java:S2259â"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8í™Ó™ç.
-^
-java:S1128"<Remove this unused import 'android.content.DialogInterface'.(Š­›¨þÿÿÿÿ8¬ÜÓ™ç.
-	java:S1166"^Rename this field "CAMERA_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÀø ùÿÿÿÿ8ó™ÈŽç.
 9
-java:S3626ƒ"Remove this redundant jump.(ûÁÝ…8ƒÊŽšç.
+java:S3626þ"Remove this redundant jump.(ûÁÝ…8ƒÊŽšç.
 d
 java:S1128"BRemove this unused import 'androidx.fragment.app.FragmentManager'.(¯­ë‹ýÿÿÿÿ8Éçø™ç.
+^
+java:S1128"<Remove this unused import 'android.content.DialogInterface'.(Š­›¨þÿÿÿÿ8¬ÜÓ™ç.
+{	java:S1167"_Rename this field "GALLERY_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÜ÷à8ó™ÈŽç.
+`
+java:S2259Ý"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8í™Ó™ç.
+	java:S1166"^Rename this field "CAMERA_REQUEST_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÀø ùÿÿÿÿ8ó™ÈŽç.
+]
+java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8’Èœìæ.
+^
+java:S1128"<Remove this unused import 'android.annotation.SuppressLint'.(ÕƒóÏûÿÿÿÿ8ºŒ¹ç.

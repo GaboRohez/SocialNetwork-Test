@@ -43,6 +43,10 @@ import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 import xyz.gaborohez.socialnetwork.ui.utils.FileUtil;
 
+import static xyz.gaborohez.socialnetwork.constants.AppConstants.CAMERA_REQUEST_CODE;
+import static xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST_CODE;
+import static xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE;
+
 public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, FragmentProfileBinding> implements ProfileContract.View, View.OnClickListener {
 
     private User user;
@@ -51,8 +55,6 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
     private String imageProfile;
 
     private String mAbsolutePhotoPath;
-    private int CAMERA_REQUEST_CODE = 100;
-    private int GALLERY_REQUEST_CODE = 200;
 
     private static final String TAG = "ProfileFragment";
 
@@ -129,7 +131,6 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
                 .build());
     }
 
-    @SuppressLint("StringFormatMatches")
     private void setUpUserInfo() {
         if (user.getCover() != null)
             Glide.with(getContext()).asBitmap().load(user.getCover()).into(binding.ivCover);
@@ -189,7 +190,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
     private void openFragmentComment() {
         PostFragment fragment = new PostFragment();
-        fragment.setTargetFragment(this, 1);
+        fragment.setTargetFragment(this, POST_SUCCESS_CODE);
         addFragmentInParentActivity(fragment, PostFragment.class.getName(), R.id.contentMain);
     }
 
@@ -217,42 +218,45 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode == GALLERY_REQUEST_CODE &&  resultCode == Activity.RESULT_OK) {
-            try {
-                File file = FileUtil.from(requireActivity(), data.getData());
+        switch (requestCode){
+            case GALLERY_REQUEST_CODE:
+                if(resultCode == Activity.RESULT_OK) {
+                    try {
+                        File file = FileUtil.from(requireActivity(), data.getData());
 
-                if (isProfile){
-                    imageProfile = AppUtils.toBase64(requireContext(), file);
-                    presenter.updateImageProfile(imageProfile);
-                } else{
-                    imageCover = AppUtils.toBase64(requireContext(), file);
-                    presenter.updateImageCover(imageCover);
+                        if (isProfile){
+                            imageProfile = AppUtils.toBase64(requireContext(), file);
+                            presenter.updateImageProfile(imageProfile);
+                        } else{
+                            imageCover = AppUtils.toBase64(requireContext(), file);
+                            presenter.updateImageCover(imageCover);
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                 }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            return;
-        }
-        //  image from camera
-        if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK){
-            try {
-                File file = new File(mAbsolutePhotoPath);
-                if (isProfile){
-                    imageProfile = AppUtils.toBase64(requireContext(), file);
-                    presenter.updateImageProfile(imageProfile);
-                } else{
-                    imageCover = AppUtils.toBase64(requireContext(), file);
-                    presenter.updateImageCover(imageCover);
+                break;
+            case CAMERA_REQUEST_CODE:
+                //  image from camera
+                if (resultCode == Activity.RESULT_OK){
+                    try {
+                        File file = new File(mAbsolutePhotoPath);
+                        if (isProfile){
+                            imageProfile = AppUtils.toBase64(requireContext(), file);
+                            presenter.updateImageProfile(imageProfile);
+                        } else{
+                            imageCover = AppUtils.toBase64(requireContext(), file);
+                            presenter.updateImageCover(imageCover);
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    return;
                 }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            return;
-        }
-
-        if (requestCode == 1){
-            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
-            return;
+                break;
+            case POST_SUCCESS_CODE:
+                Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 

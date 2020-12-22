@@ -309,6 +309,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/btnLocation"
                     android:clickable="true"
                     android:foreground="?attr/selectableItemBackground"

@@ -1,15 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhite"
     android:layout_height="match_parent"
     tools:context=".ui.post.PostFragment">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?actionBarSize">
 
-</LinearLayout>
+        <LinearLayout
+            android:padding="@dimen/dimen_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:id="@+id/btnComment"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/dimen_normal"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="@dimen/dimen_profile_post"
+                    android:layout_height="@dimen/dimen_profile_post"
+                    android:background="@color/colorWhite"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_person"
+                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                    app:strokeColor="@android:color/white"
+                    app:strokeWidth="3dp" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_marginStart="@dimen/dimen_small"
+                    tools:text="@tools:sample/full_names"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/etComment"
+                android:hint="@string/what_are_you_thinking"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:maxLines="40"
+                android:background="@null"
+                android:layout_marginTop="@dimen/dimen_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:id="@+id/contentImage"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_marginTop="@dimen/dimen_normal"
+                android:layout_width="250dp"
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:scaleType="centerCrop"
+                    tools:src="@tools:sample/backgrounds/scenic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ImageButton
+                    android:id="@+id/btnDelete"
+                    android:layout_marginTop="@dimen/dimen_xxsmall"
+                    android:layout_marginEnd="@dimen/dimen_xxsmall"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    app:srcCompat="@drawable/ic_clear"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/contentAction"
+        android:background="@drawable/background_elevation"
+        android:elevation="@dimen/elevation"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <ImageView
+            android:layout_marginStart="@dimen/dimen_normal"
+            android:layout_centerVertical="true"
+            android:id="@+id/btnImage"
+            app:srcCompat="@drawable/ic_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPost"
+            android:text="@string/post"
+            android:layout_marginEnd="@dimen/dimen_normal"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

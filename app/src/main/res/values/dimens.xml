@@ -6,4 +6,6 @@
     <dimen name="dimen_normal">16dp</dimen>
     <dimen name="dimen_big">24dp</dimen>
     <dimen name="dimen_floating_camera">30dp</dimen>
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="dimen_profile_post">50dp</dimen>
 </resources>
