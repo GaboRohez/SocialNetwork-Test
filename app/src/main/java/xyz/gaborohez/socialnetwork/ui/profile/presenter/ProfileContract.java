@@ -1,6 +1,5 @@
 package xyz.gaborohez.socialnetwork.ui.profile.presenter;
 
-import io.reactivex.Completable;
 import io.reactivex.Single;
 import xyz.gaborohez.socialnetwork.data.models.Follow;
 import xyz.gaborohez.socialnetwork.data.network.global.BaseResponse;

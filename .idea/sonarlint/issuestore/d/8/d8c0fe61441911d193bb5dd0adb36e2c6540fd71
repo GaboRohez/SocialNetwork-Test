@@ -1,8 +1,8 @@
 
-E
-java:S1604"(Make this anonymous inner class a lambda(„ÑñŒ8ËÒŸ½æ.
-Y	java:S110"=This class has 10 parents which is greater than 5 authorized.(˜Ôªõ8ËÒŸ½æ.
-L
-java:S1874"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ8ËÒŸ½æ.
 L
 java:S3740"/Provide the parametrized type for this generic.(˜Ôªõ8ËÒŸ½æ.
+L
+java:S1874"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ8ËÒŸ½æ.
+Y	java:S110"=This class has 10 parents which is greater than 5 authorized.(˜Ôªõ8ËÒŸ½æ.
+E
+java:S1604"(Make this anonymous inner class a lambda(„ÑñŒ8ËÒŸ½æ.

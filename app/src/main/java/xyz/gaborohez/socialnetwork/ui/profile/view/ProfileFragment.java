@@ -1,8 +1,6 @@
 package xyz.gaborohez.socialnetwork.ui.profile.view;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,8 +8,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -37,7 +33,7 @@ import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
-import xyz.gaborohez.socialnetwork.ui.post.PostFragment;
+import xyz.gaborohez.socialnetwork.ui.post.view.PostFragment;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
@@ -255,7 +251,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
                 }
                 break;
             case POST_SUCCESS_CODE:
-                Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "onActivityResult: success post");
                 break;
         }
     }

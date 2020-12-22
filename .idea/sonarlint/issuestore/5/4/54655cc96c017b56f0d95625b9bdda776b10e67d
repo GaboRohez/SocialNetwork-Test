@@ -1,0 +1,14 @@
+
+\	java:S107I"BConstructor has 17 parameters, which is greater than 7 authorized.(ÁôÅÇûÿÿÿÿ
+Z
+java:S2259t"DA "NullPointerException" could be thrown; "parent" is nullable here.(ò‘æ
+g
+java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ƒ÷‘Ï
+g
+java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ú®Ú±
+l
+java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ôİÕıÿÿÿÿ
+m
+java:S3776z"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(Ö şªûÿÿÿÿ
+V
+java:S1119~";Refactor the code to remove this label and the need for it.(´Ó¸úùÿÿÿÿ

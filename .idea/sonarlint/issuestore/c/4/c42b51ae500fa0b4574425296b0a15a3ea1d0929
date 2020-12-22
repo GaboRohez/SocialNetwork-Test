@@ -1,5 +1,5 @@
 
-s
-java:S1128	"VRemove this unused import 'xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager'.(ì†¾Þ8å¶ÏÇä.
 q
 java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants'.(ó§Ú¾üÿÿÿÿ8å¶ÏÇä.
+s
+java:S1128	"VRemove this unused import 'xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager'.(ì†¾Þ8å¶ÏÇä.

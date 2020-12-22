@@ -1,4 +1,4 @@
-package xyz.gaborohez.socialnetwork.ui.post;
+package xyz.gaborohez.socialnetwork.ui.post.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -28,10 +29,16 @@ import java.util.Date;
 import xyz.gaborohez.socialnetwork.BuildConfig;
 import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.data.models.User;
+import xyz.gaborohez.socialnetwork.data.network.model.post.PostRequest;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentPostBinding;
+import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
+import xyz.gaborohez.socialnetwork.ui.post.presenter.PostContract;
+import xyz.gaborohez.socialnetwork.ui.post.presenter.PostPresenter;
+import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract;
+import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 import xyz.gaborohez.socialnetwork.ui.utils.FileUtil;
 
@@ -39,12 +46,18 @@ import static xyz.gaborohez.socialnetwork.constants.AppConstants.CAMERA_REQUEST_
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE;
 
-public class PostFragment extends BaseFragment<BasePresenter, FragmentPostBinding> {
+public class PostFragment extends BaseFragment<PostContract.Presenter, FragmentPostBinding> implements PostContract.View {
 
     private static final String TAG = "PostFragment";
 
     private String image;
     private String mAbsolutePhotoPath;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        presenter = new PostPresenter(this);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,20 +86,14 @@ public class PostFragment extends BaseFragment<BasePresenter, FragmentPostBindin
 
         binding.etComment.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 binding.btnPost.setEnabled(s.toString().length() > 0);
             }
-
             @Override
-            public void afterTextChanged(Editable s) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }@Override
+            public void afterTextChanged(Editable s) { }
         });
+
         binding.btnImage.setOnClickListener(v -> showImageDialog());
 
         binding.btnDelete.setOnClickListener(v -> {
@@ -95,9 +102,12 @@ public class PostFragment extends BaseFragment<BasePresenter, FragmentPostBindin
         });
 
         binding.btnPost.setOnClickListener(v -> {
-            Intent intent = new Intent();
-            getTargetFragment().onActivityResult(getTargetRequestCode(), POST_SUCCESS_CODE, intent);
-            getActivity().getSupportFragmentManager().popBackStack();
+
+            PostRequest request = new PostRequest();
+            request.setImage(image);
+            request.setText(binding.etComment.getText().toString().trim());
+
+            presenter.createPost(request);
         });
     }
 
@@ -158,6 +168,15 @@ public class PostFragment extends BaseFragment<BasePresenter, FragmentPostBindin
         );
         mAbsolutePhotoPath = photoFile.getAbsolutePath();
         return photoFile;
+    }
+
+    @Override
+    public void postPublished(String message) {
+        Intent intent = new Intent();
+        getTargetFragment().onActivityResult(getTargetRequestCode(), POST_SUCCESS_CODE, intent);
+        getActivity().getSupportFragmentManager().popBackStack();
+
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     @Override

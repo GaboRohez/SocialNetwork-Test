@@ -1,0 +1,12 @@
+
+[	java:S107,"AConstructor has 8 parameters, which is greater than 7 authorized.(‹òÆ¿şÿÿÿÿ
+Z
+java:S2259J"DA "NullPointerException" could be thrown; "parent" is nullable here.(ò‘æ
+g
+java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ƒ÷‘Ï
+g
+java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ú®Ú±
+l
+java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ôİÕıÿÿÿÿ
+V
+java:S1119T";Refactor the code to remove this label and the need for it.(´Ó¸úùÿÿÿÿ

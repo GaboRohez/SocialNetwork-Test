@@ -1,9 +1,9 @@
 
-n
-java:S3008"SRename this field "INSTANCE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äˆÅžÿÿÿÿÿ
-N
-java:S1128"3Remove this unused import 'java.lang.reflect.Type'.(‰ûÕñýÿÿÿÿ
-F
-java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
 O
 java:S2168"9Remove this dangerous instance of double-checked locking.(ýÄ§ÿ
+F
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+N
+java:S1128"3Remove this unused import 'java.lang.reflect.Type'.(‰ûÕñýÿÿÿÿ
+n
+java:S3008"SRename this field "INSTANCE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äˆÅžÿÿÿÿÿ

@@ -12,6 +12,7 @@ import xyz.gaborohez.socialnetwork.data.network.model.imageprofile.UpdateImageRe
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;
+import xyz.gaborohez.socialnetwork.data.network.model.post.PostRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.signin.SignInRequest;
 
 public interface SocialNetworkAPI {
@@ -36,5 +37,6 @@ public interface SocialNetworkAPI {
     @PUT("user-cover")
     Single<BaseResponse> updateImageCover(@Body UpdateImageRequest request);
 
-
+    @POST("publication")
+    Single<BaseResponse> createPost(@Body PostRequest request);
 }
