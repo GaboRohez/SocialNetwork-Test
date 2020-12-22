@@ -36,4 +36,5 @@ public interface SocialNetworkAPI {
     @PUT("user-cover")
     Single<BaseResponse> updateImageCover(@Body UpdateImageRequest request);
 
+
 }

@@ -8,16 +8,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
-import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -31,7 +30,6 @@ import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentPostBinding;
-import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
@@ -73,9 +71,23 @@ public class PostFragment extends BaseFragment<BasePresenter, FragmentPostBindin
 
     private void setUpEvents() {
 
-        binding.btnImage.setOnClickListener(v -> {
-            showImageDialog();
+        binding.etComment.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                binding.btnPost.setEnabled(s.toString().length() > 0);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
         });
+        binding.btnImage.setOnClickListener(v -> showImageDialog());
 
         binding.btnDelete.setOnClickListener(v -> {
             image = null;
