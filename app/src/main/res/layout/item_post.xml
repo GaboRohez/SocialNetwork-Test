@@ -68,6 +68,7 @@
 
     <TextView
         android:id="@+id/tvComment"
+        android:textIsSelectable="true"
         android:visibility="gone"
         tools:visibility="visible"
         android:layout_marginTop="@dimen/dimen_normal"

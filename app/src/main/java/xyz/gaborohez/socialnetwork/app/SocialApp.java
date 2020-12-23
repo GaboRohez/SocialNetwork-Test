@@ -28,6 +28,9 @@ public class SocialApp extends Application {
             this.resources = resources;
         }
 
+        public String getJustNow(){
+            return resources.getString(R.string.just_now);
+        }
         public String getErrorServer() {
             return resources.getString(R.string.server_error);
         }

@@ -57,6 +57,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="without_results">Without results</string>
+    <string name="just_now">Just now</string>
 
 
 </resources>

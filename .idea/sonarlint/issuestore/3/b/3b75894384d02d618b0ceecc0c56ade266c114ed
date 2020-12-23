@@ -1,10 +1,10 @@
 
 g
 java:S2259 "JA "NullPointerException" could be thrown; "thumb_bitmap" is nullable here.(°”šñ8¬ë‰Áè.
-U
-java:S1118":Add a private constructor to hide the implicit public one.(ŠöµËûÿÿÿÿ
-f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºâ‡¥
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òğÇùÿÿÿÿ
 x
 java:S1488!"bImmediately return this expression instead of assigning it to the temporary variable "thumb_byte".(®ŞÁÚ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºâ‡¥
 f	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ŞÁÚ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òğÇùÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ŠöµËûÿÿÿÿ

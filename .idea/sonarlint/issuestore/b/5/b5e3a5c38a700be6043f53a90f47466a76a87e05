@@ -1,0 +1,7 @@
+
+H
+java:S1602",Remove useless curly braces around statement(Ÿ·ã8ø ‡Ûè.
+r
+java:S1128"WRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.SUCCESS'.(×œ³×8Ø¢ıÚè.
+x
+java:S1905"VRemove this unnecessary cast to "org.sonar.java.resolve.Symbols$UnknownType@63de1692".(˜˜Óüÿÿÿÿ8Ø¢ıÚè.

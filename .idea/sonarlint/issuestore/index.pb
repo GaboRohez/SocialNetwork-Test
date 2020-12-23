@@ -93,8 +93,6 @@ Dapp/src/main/java/xyz/gaborohez/socialnetwork/ui/utils/FileUtil.java,e\8\e8c60
 Qapp/src/main/java/xyz/gaborohez/socialnetwork/ui/utils/CompressorBitmapImage.java,3\b\3b75894384d02d618b0ceecc0c56ade266c114ed
 ï
 eapp/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/imageprofile/UpdateImageRequest.java,9\4\947760c43bb057e5e2970848386d8c76e205fec9
-w
-Gapp/src/main/java/xyz/gaborohez/socialnetwork/ui/post/PostFragment.java,7\3\73e3d1c3c598d60b57f01bf079796a4aaae7d3a4
 Ä
 Papp/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt,0\7\078536e4bb55d11ea0db2b7c85baa41e94699edb
 p
@@ -149,8 +147,6 @@ r
 Bapp/build/intermediates/incremental/mergeDebugResources/merger.xml,3\e\3ebb3135b0165eef74d1bcb669cc218bd59ce7b0
 É
 Sapp/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties,b\9\b97ec49041e7d949c26293070e8a636dba8c7b33
-ç
-]app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_post.xml,4\e\4e6b5ac7f36ddf2d5a7ca8a3f8931928c5ff25c4
 r
 Bapp/src/test/java/xyz/gaborohez/socialnetwork/ExampleUnitTest.java,3\c\3c519832cacbe6138501f35cde2c965cf0b98f61
 Å
@@ -485,3 +481,19 @@ T
 $app/src/main/res/drawable/circle.xml,f\3\f321c4d1534848e5bd238b826c6a81d38b8f96ae
 W
 'app/src/main/res/drawable/ic_camera.xml,6\e\6e403e11d8a8bd3e3b9e07807215c9b85e624a7d
+Ü
+Vapp/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/post/PostRequest.java,1\4\14a4eb0c01536ab04b6f245db3b4500c26ed0541
+Ñ
+Tapp/src/main/java/xyz/gaborohez/socialnetwork/ui/post/interactor/PostInteractor.java,3\1\31e20334d6f4973ad1eb6729962a60f404c481c2
+Å
+Qapp/src/main/java/xyz/gaborohez/socialnetwork/ui/post/presenter/PostContract.java,0\9\09b22c9c37f7765ef89b96184c3084e2c16468e9
+Ç
+Rapp/src/main/java/xyz/gaborohez/socialnetwork/ui/post/presenter/PostPresenter.java,b\5\b5e3a5c38a700be6043f53a90f47466a76a87e05
+|
+Lapp/src/main/java/xyz/gaborohez/socialnetwork/ui/post/view/PostFragment.java,7\a\7a6a2fb47aa0d340f7abdca51877c6d05f085e7a
+à
+Xapp/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/post/PostsResponse.java,0\e\0e16a517f69c18ed766f6571626ff1c4cebfb865
+{
+Kapp/src/main/java/xyz/gaborohez/socialnetwork/data/models/Publications.java,3\8\38ec338fcc4a7b14fc9d8bbc8b61f9a9809b3b59
+y
+Iapp/src/main/java/xyz/gaborohez/socialnetwork/ui/adapter/PostAdapter.java,7\3\735258f9437f32e2e8535ac7e9b7383d07d584e1
