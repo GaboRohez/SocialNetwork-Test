@@ -6,12 +6,14 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import xyz.gaborohez.socialnetwork.data.network.global.BaseResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.follows.FollowsResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.imageprofile.UpdateImageRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;
+import xyz.gaborohez.socialnetwork.data.network.model.post.PostsResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.post.PostRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.signin.SignInRequest;
 
@@ -39,4 +41,7 @@ public interface SocialNetworkAPI {
 
     @POST("publication")
     Single<BaseResponse> createPost(@Body PostRequest request);
+
+    @GET("publications/{page}")
+    Single<PostsResponse> getPost(@Path("page") int page);
 }

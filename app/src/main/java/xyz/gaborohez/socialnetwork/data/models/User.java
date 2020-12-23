@@ -98,14 +98,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" +"\n"+
-                "cover='" + cover + '\'' +"\n"+
-                "image='" + image + '\'' +"\n"+
+                "id='" + id + '\'' +"\n"+
                 ", role='" + role + '\'' +"\n"+
                 ", email='" + email + '\'' +"\n"+
                 ", nick='" + nick + '\'' +"\n"+
                 ", surname='" + surname + '\'' +"\n"+
                 ", name='" + name + '\'' +"\n"+
-                ", id='" + id + '\'' +"\n"+
                 '}';
     }
 }

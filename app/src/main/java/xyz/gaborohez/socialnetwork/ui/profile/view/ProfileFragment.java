@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -25,13 +26,16 @@ import com.google.android.material.shape.CornerFamily;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import xyz.gaborohez.socialnetwork.BuildConfig;
 import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.data.models.Follow;
+import xyz.gaborohez.socialnetwork.data.models.Publications;
 import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
+import xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.post.view.PostFragment;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract;
@@ -210,6 +214,28 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
         binding.postCounter.setText(String.valueOf(result.getPost()));
         binding.followingCounter.setText(String.valueOf(result.getFollowing()));
         binding.followersCounter.setText(String.valueOf(result.getFollowed()));
+
+        presenter.getPosts(1);
+    }
+
+    @Override
+    public void emptyPost() {
+        binding.contentNoPost.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showPosts(List<Publications> publications) {
+        Log.d(TAG, "showPosts: "+publications);
+
+        binding.contentNoPost.setVisibility(View.GONE);
+
+        PostAdapter adapter = new PostAdapter(getContext(), publications);
+        binding.recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        binding.recycler.setHasFixedSize(true);
+        binding.recycler.setNestedScrollingEnabled(false);
+        binding.recycler.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
     }
 
     @Override

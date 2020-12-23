@@ -22,7 +22,7 @@ public class CompressorBitmapImage {
             thumb_bitmap = new Compressor(ctx)
                     .setMaxWidth(width)
                     .setMaxHeight(height)
-                    .setQuality(50)
+                    .setQuality(80)
                     .compressToBitmap(file_thumb_path);
         } catch (IOException e) {
             e.printStackTrace();

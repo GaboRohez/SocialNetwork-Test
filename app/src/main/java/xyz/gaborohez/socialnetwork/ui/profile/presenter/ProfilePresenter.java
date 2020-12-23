@@ -112,4 +112,33 @@ public class ProfilePresenter extends BasePresenter<ProfileContract.View> implem
                     }
                 }));
     }
+
+    @Override
+    public void getPosts(int page) {
+
+        addSubscription(interactor.getPost(page)
+                .doOnSubscribe(disposable -> view.showLoader(true))
+                .doAfterTerminate(() -> view.showLoader(false))
+                .subscribe(response -> {
+                    if (response.getPublications().isEmpty()){
+                        view.emptyPost();
+                    }else {
+                        view.showPosts(response.getPublications());
+                    }
+                }, throwable -> {
+                    if (throwable instanceof HttpException) {
+                        HttpException error = (HttpException)throwable;
+
+                        if (error.response().code() == AppConstants.EXPIRED)
+                            view.expiredToken();
+                        else    // handle message
+                            view.showAlertDialog(handlerError(throwable));
+                    } else if (throwable instanceof SocketTimeoutException) {
+                        // handle timeout from Retrofit
+                        view.showAlertDialog(processError(throwable));
+                    }else {
+                        view.showAlertDialog(SocialApp.resourcesManager.getErrorServer());
+                    }
+                }));
+    }
 }

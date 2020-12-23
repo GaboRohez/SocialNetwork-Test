@@ -111,8 +111,6 @@ U
 %app/src/main/res/font/nexa_family.xml,7\e\7ed54e9b108fc03d31c279aab2d6361c115ab3a8
 \
 ,app/src/main/res/color/my_color_selector.xml,1\9\195d2321dc7885aa2460995dacfd7316c7370af8
-\
-,app/src/main/res/layout/fragment_profile.xml,b\4\b4466735edf81a3353097aecb75b46205cdee6b6
 [
 +app/src/main/res/layout/fragment_tabbed.xml,1\d\1de11399a04a6125dda44778612b65aa90ae7ced
 Y
@@ -135,8 +133,6 @@ V
 &app/src/main/res/values/font_certs.xml,8\7\8721b09acc6dcb831485a758e527a36efbbce1ff
 R
 "app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
-R
-"app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740
 ^
 .app/src/main/res/drawable/ic_menu_settings.xml,0\f\0fed60f0d33282461948d856f0b6399f41ee9384
 d
