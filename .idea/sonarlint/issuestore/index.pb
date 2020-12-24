@@ -123,8 +123,6 @@ Y
 +app/src/main/res/layout/fragment_log_in.xml,5\7\5734562527709a92277c320be1685cc653ea90ec
 `
 0app/src/main/res/layout/loader_dialog_layout.xml,d\c\dca3b33ee439cef4175db67f29ba606c7256a895
-S
-#app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
 R
 "app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
 V

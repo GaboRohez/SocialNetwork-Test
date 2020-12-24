@@ -21,6 +21,8 @@ public interface ProfileContract {
         void emptyPost();
 
         void showPosts(List<Publications> publications);
+
+        void postRemoved(int position, String message);
     }
 
     interface Presenter {
@@ -32,6 +34,8 @@ public interface ProfileContract {
         void updateImageCover(String image);
 
         void getPosts(int page);
+
+        void deletePost(String id, int position);
     }
 
     interface Interactor {
@@ -43,5 +47,7 @@ public interface ProfileContract {
         Single<BaseResponse> updateImageCover(UpdateImageRequest request);
 
         Single<PostsResponse> getPost(int page);
+
+        Single<BaseResponse> deletePost(String id);
     }
 }

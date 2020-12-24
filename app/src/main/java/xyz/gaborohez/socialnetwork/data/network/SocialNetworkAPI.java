@@ -2,6 +2,7 @@ package xyz.gaborohez.socialnetwork.data.network;
 
 import io.reactivex.Single;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
@@ -44,4 +45,7 @@ public interface SocialNetworkAPI {
 
     @GET("publications/{page}")
     Single<PostsResponse> getPost(@Path("page") int page);
+
+    @DELETE("publication/{id}")
+    Single<BaseResponse> deletePost(@Path("id") String id);
 }

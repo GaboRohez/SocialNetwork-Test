@@ -1,7 +1,5 @@
 package xyz.gaborohez.socialnetwork.ui.profile.presenter;
 
-import android.util.Log;
-
 import java.net.SocketTimeoutException;
 
 import retrofit2.HttpException;
@@ -125,6 +123,31 @@ public class ProfilePresenter extends BasePresenter<ProfileContract.View> implem
                     }else {
                         view.showPosts(response.getPublications());
                     }
+                }, throwable -> {
+                    if (throwable instanceof HttpException) {
+                        HttpException error = (HttpException)throwable;
+
+                        if (error.response().code() == AppConstants.EXPIRED)
+                            view.expiredToken();
+                        else    // handle message
+                            view.showAlertDialog(handlerError(throwable));
+                    } else if (throwable instanceof SocketTimeoutException) {
+                        // handle timeout from Retrofit
+                        view.showAlertDialog(processError(throwable));
+                    }else {
+                        view.showAlertDialog(SocialApp.resourcesManager.getErrorServer());
+                    }
+                }));
+    }
+
+    @Override
+    public void deletePost(String id, int position) {
+
+        addSubscription(interactor.deletePost(id)
+                .doOnSubscribe(disposable -> view.showLoader(true))
+                .doAfterTerminate(() -> view.showLoader(false))
+                .subscribe(response -> {
+                    view.postRemoved(position, response.getMessage());
                 }, throwable -> {
                     if (throwable instanceof HttpException) {
                         HttpException error = (HttpException)throwable;

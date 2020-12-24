@@ -47,4 +47,13 @@ public class ProfileInteractor implements ProfileContract.Interactor{
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
+
+    @Override
+    public Single<BaseResponse> deletePost(String id) {
+        return RetrofitClient.api()
+                .create(SocialNetworkAPI.class)
+                .deletePost(id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 }

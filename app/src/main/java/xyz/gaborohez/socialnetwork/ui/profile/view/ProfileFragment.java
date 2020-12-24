@@ -47,13 +47,13 @@ import static xyz.gaborohez.socialnetwork.constants.AppConstants.CAMERA_REQUEST_
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE;
 
-public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, FragmentProfileBinding> implements ProfileContract.View, View.OnClickListener {
+public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, FragmentProfileBinding> implements ProfileContract.View, View.OnClickListener, PostAdapter.PostIn {
 
     private User user;
     private boolean isProfile;
     private String imageCover;
     private String imageProfile;
-
+    private PostAdapter adapter;
     private String mAbsolutePhotoPath;
 
     private static final String TAG = "ProfileFragment";
@@ -229,7 +229,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
         binding.contentNoPost.setVisibility(View.GONE);
 
-        PostAdapter adapter = new PostAdapter(getContext(), publications);
+        adapter = new PostAdapter(getContext(), publications, this);
         binding.recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         binding.recycler.setHasFixedSize(true);
         binding.recycler.setNestedScrollingEnabled(false);
@@ -296,5 +296,21 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
         }
 
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void deletePost(String id, int position) {
+        presenter.deletePost(id, position);
+    }
+
+    @Override
+    public void editPost(Publications publications) {
+
+    }
+
+    @Override
+    public void postRemoved(int position, String message) {
+        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+        adapter.removePost(position);
     }
 }

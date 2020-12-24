@@ -1,8 +1,12 @@
 
 u
 java:S3776ò"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(™­²©ùÿÿÿÿ8ÙÊíëè.
-`
-java:S2259÷"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8ÙÊíëè.
 9
 java:S3626”"Remove this redundant jump.(ûÁİ…8ÙÊíëè.
+¤
+java:S1186³"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(à®®úÿÿÿÿ8‡…ÿ‡é.
 D	java:S131ó""Add a default case to this switch.(×ö³–úÿÿÿÿ8ÙÊíëè.
+¤
+java:S1186®"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ïÆÜ¼ıÿÿÿÿ8‡…ÿ‡é.
+`
+java:S2259÷"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8ÙÊíëè.

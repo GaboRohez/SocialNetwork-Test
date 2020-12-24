@@ -1,20 +1,17 @@
 package xyz.gaborohez.socialnetwork.ui.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import xyz.gaborohez.socialnetwork.R;
@@ -25,12 +22,19 @@ import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     private Context context;
+    private PostIn listener;
     private List<Publications> list;
     private static final String TAG = "PostAdapter";
 
-    public PostAdapter(Context context, List<Publications> list) {
+    public PostAdapter(Context context, List<Publications> list, PostIn listener) {
         this.context = context;
         this.list = list;
+        this.listener = listener;
+    }
+
+    public interface PostIn {
+        void deletePost(String id, int position);
+        void editPost(Publications publication);
     }
 
     @NonNull
@@ -49,7 +53,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
         holder.binding.tvName.setText(String.format(context.getString(R.string.user_name), list.get(position).getUser().getName(), list.get(position).getUser().getSurname()));
 
-        Log.d(TAG, "onBindViewHolder: "+AppUtils.getElapsedTime(list.get(position).getCreated_at()));
         holder.binding.tvDate.setText(AppUtils.getElapsedTime(list.get(position).getCreated_at()));
 
         if (list.get(position).getText() != null && !list.get(position).getText().isEmpty()){
@@ -63,10 +66,31 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             Glide.with(context)
                     .load(Base64.decode(list.get(position).getFile(), Base64.DEFAULT))
                     .into(holder.binding.ivImage);
-
         }
 
+        holder.binding.btnOption.setOnClickListener(v -> showPopUpMenu(holder));
+    }
 
+    private void showPopUpMenu(ViewHolder holder) {
+        PopupMenu popup = new PopupMenu(context, holder.binding.btnOption);
+        popup.getMenuInflater().inflate(R.menu.popup_menu_post, popup.getMenu());
+        popup.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()){
+                case R.id.edit:
+                    listener.editPost(list.get(holder.getAdapterPosition()));
+                    break;
+                case R.id.delete:
+                    listener.deletePost(list.get(holder.getAdapterPosition()).getId(), holder.getAdapterPosition());
+                    break;
+            }
+            return true;
+        });
+        popup.show();
+    }
+
+    public void removePost(int position) {
+        list.remove(position);
+        notifyDataSetChanged();
     }
 
     @Override
