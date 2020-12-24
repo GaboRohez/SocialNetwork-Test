@@ -59,6 +59,7 @@
     <string name="just_now">Just now</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit Post</string>
+    <string name="update">Update</string>
 
 
 </resources>

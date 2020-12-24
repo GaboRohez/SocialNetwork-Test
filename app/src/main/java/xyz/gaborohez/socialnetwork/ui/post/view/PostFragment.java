@@ -28,6 +28,7 @@ import java.util.Date;
 
 import xyz.gaborohez.socialnetwork.BuildConfig;
 import xyz.gaborohez.socialnetwork.R;
+import xyz.gaborohez.socialnetwork.data.models.Publications;
 import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.network.model.post.PostRequest;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
@@ -51,11 +52,23 @@ public class PostFragment extends BaseFragment<PostContract.Presenter, FragmentP
     private static final String TAG = "PostFragment";
 
     private String image;
+    private Publications publication;
     private String mAbsolutePhotoPath;
+
+    public static PostFragment newInstance(Publications publication) {
+        Bundle args = new Bundle();
+        args.putParcelable("publication", publication);
+        PostFragment fragment = new PostFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null)
+            publication = requireArguments().getParcelable("publication");
+
         presenter = new PostPresenter(this);
     }
 
@@ -70,7 +83,24 @@ public class PostFragment extends BaseFragment<PostContract.Presenter, FragmentP
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setUpProfile();
+        if (publication != null)
+            setUpPost();
+
         setUpEvents();
+    }
+
+    private void setUpPost() {
+        if (publication.getText() != null){
+            binding.btnPost.setEnabled(true);
+            binding.btnPost.setText(R.string.update);
+            binding.etComment.setText(publication.getText());
+        }
+
+        if (publication.getFile() != null){
+            image = publication.getFile();
+            binding.contentImage.setVisibility(View.VISIBLE);
+            Glide.with(requireContext()).load(Base64.decode(publication.getFile(), Base64.DEFAULT)).into(binding.image);
+        }
     }
 
     private void setUpProfile() {
@@ -103,11 +133,19 @@ public class PostFragment extends BaseFragment<PostContract.Presenter, FragmentP
 
         binding.btnPost.setOnClickListener(v -> {
 
-            PostRequest request = new PostRequest();
-            request.setImage(image);
-            request.setText(binding.etComment.getText().toString().trim());
+            if (publication != null){   //update
+                /*PostRequest request = new PostRequest();
+                request.setImage(image);
+                request.setText(binding.etComment.getText().toString().trim());
 
-            presenter.createPost(request);
+                presenter.updatePost(request);*/
+            }else { //create
+                PostRequest request = new PostRequest();
+                request.setImage(image);
+                request.setText(binding.etComment.getText().toString().trim());
+
+                presenter.createPost(request);
+            }
         });
     }
 

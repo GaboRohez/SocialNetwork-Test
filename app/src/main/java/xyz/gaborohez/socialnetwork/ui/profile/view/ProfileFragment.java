@@ -277,6 +277,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
                 }
                 break;
             case POST_SUCCESS_CODE:
+                presenter.getPosts(1);
                 Log.d(TAG, "onActivityResult: success post");
                 break;
         }
@@ -305,7 +306,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
     @Override
     public void editPost(Publications publications) {
-
+        addFragmentInParentActivity(PostFragment.newInstance(publications), PostFragment.class.getName(), R.id.contentMain);
     }
 
     @Override

@@ -119,8 +119,6 @@ Y
 ,app/src/main/res/layout/activity_session.xml,c\b\cb96b255ec316d2a2cb4659a0f212e2136481de0
 ]
 -app/src/main/res/layout/fragment_settings.xml,4\f\4fc5b33bc32b9fda83e2938a513ac8733024f0ff
-[
-+app/src/main/res/layout/fragment_log_in.xml,5\7\5734562527709a92277c320be1685cc653ea90ec
 `
 0app/src/main/res/layout/loader_dialog_layout.xml,d\c\dca3b33ee439cef4175db67f29ba606c7256a895
 R

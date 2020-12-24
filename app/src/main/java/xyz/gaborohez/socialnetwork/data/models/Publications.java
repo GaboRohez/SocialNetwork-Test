@@ -1,8 +1,13 @@
 package xyz.gaborohez.socialnetwork.data.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class Publications {
+import java.io.Serializable;
+
+public class Publications implements Parcelable {
     @SerializedName("created_at")
     private String created_at;
     @SerializedName("user")
@@ -64,4 +69,37 @@ public class Publications {
                 ", user=" + user +
                 '}';
     }
+
+    protected Publications(Parcel in) {
+        created_at = in.readString();
+        file = in.readString();
+        text = in.readString();
+        id = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(created_at);
+        dest.writeString(file);
+        dest.writeString(text);
+        dest.writeString(id);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Publications> CREATOR = new Creator<Publications>() {
+        @Override
+        public Publications createFromParcel(Parcel in) {
+            return new Publications(in);
+        }
+
+        @Override
+        public Publications[] newArray(int size) {
+            return new Publications[size];
+        }
+    };
+
 }
