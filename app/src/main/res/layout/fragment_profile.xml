@@ -1,74 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/swipe"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorLightGray"
     tools:context=".ui.profile.view.ProfileFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGray">
 
         <LinearLayout
-            android:padding="@dimen/dimen_normal"
-            android:background="@color/colorWhite"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:padding="@dimen/dimen_normal"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="280dp">
+                android:layout_height="wrap_content">
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_percent=".75" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivCover"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:background="@color/colorGray"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="280dp">
 
-                <ImageButton
-                    android:id="@+id/btnCover"
-                    android:layout_width="@dimen/dimen_floating_camera"
-                    android:layout_height="@dimen/dimen_floating_camera"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="@dimen/dimen_small"
-                    android:layout_marginEnd="@dimen/dimen_normal"
-                    android:layout_marginBottom="@dimen/dimen_normal"
-                    android:background="@drawable/circle"
-                    android:padding="7dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_camera"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline4"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <RelativeLayout
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline4" >
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent=".75" />
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/ivProfile"
+                        android:id="@+id/ivCover"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@color/colorGray"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/btnCover"
+                        android:layout_width="@dimen/dimen_floating_camera"
+                        android:layout_height="@dimen/dimen_floating_camera"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/dimen_small"
+                        android:layout_marginEnd="@dimen/dimen_normal"
+                        android:layout_marginBottom="@dimen/dimen_normal"
+                        android:background="@drawable/circle"
+                        android:padding="7dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_camera"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/guideline4" >
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorWhite"
+                            android:padding="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_person"
+                            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                            app:strokeColor="@android:color/white"
+                            app:strokeWidth="3dp" />
+
+                        <ImageButton
+                            android:id="@+id/btnProfile"
+                            android:layout_width="@dimen/dimen_floating_camera"
+                            android:layout_height="@dimen/dimen_floating_camera"
+                            android:background="@drawable/circle"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="@dimen/dimen_small"
+                            android:scaleType="centerCrop"
+                            android:padding="7dp"
+                            android:src="@drawable/ic_camera"/>
+
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_marginTop="@dimen/dimen_normal"
+                    android:layout_gravity="center_horizontal"
+                    tools:text="@tools:sample/full_names"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvNickname"
+                    android:layout_gravity="center_horizontal"
+                    tools:text="@tools:sample/full_names"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:weightSum="10"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreatePost"
+                        android:text="@string/create_post"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:layout_width="0dp"
+                        android:layout_weight="8.5"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEditProfile"
+                        app:icon="@drawable/ic_options"
+                        android:layout_marginStart="@dimen/dimen_normal"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/colorBlack"
+                        app:iconPadding="0dp"
+                        android:backgroundTint="@color/colorGrayButton"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contentCounters"
+                android:paddingTop="@dimen/dimen_normal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:orientation="vertical"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/postCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/posts" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="@dimen/dimen_small"
+                        android:background="@color/colorLightGray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/followingCounter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/followings" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="@dimen/dimen_small"
+                            android:background="@color/colorLightGray" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/followersCounter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/followers" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="@dimen/dimen_small"
+                            android:background="@color/colorLightGray" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contentPost"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:background="@color/colorWhite"
+                android:paddingTop="@dimen/dimen_normal"
+                android:paddingLeft="@dimen/dimen_normal"
+                android:paddingRight="@dimen/dimen_normal"
+                android:paddingBottom="@dimen/dimen_xxsmall"
+                android:layout_marginTop="@dimen/dimen_normal"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/post"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:id="@+id/btnComment"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_normal"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivProfileComment"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:background="@color/colorWhite"
                         android:padding="5dp"
                         android:scaleType="centerCrop"
@@ -77,293 +284,123 @@
                         app:strokeColor="@android:color/white"
                         app:strokeWidth="3dp" />
 
-                    <ImageButton
-                        android:id="@+id/btnProfile"
-                        android:layout_width="@dimen/dimen_floating_camera"
-                        android:layout_height="@dimen/dimen_floating_camera"
-                        android:background="@drawable/circle"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="@dimen/dimen_small"
-                        android:scaleType="centerCrop"
-                        android:padding="7dp"
-                        android:src="@drawable/ic_camera"/>
+                    <TextView
+                        android:layout_marginStart="@dimen/dimen_small"
+                        android:text="@string/what_are_you_thinking"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                </RelativeLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_marginTop="@dimen/dimen_normal"
-                android:layout_gravity="center_horizontal"
-                tools:text="@tools:sample/full_names"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/tvNickname"
-                android:layout_gravity="center_horizontal"
-                tools:text="@tools:sample/full_names"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/contentCounters"
-            android:paddingTop="@dimen/dimen_normal"
-            android:visibility="gone"
-            tools:visibility="visible"
-            android:orientation="vertical"
-            android:background="@color/colorWhite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/postCounter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/posts" />
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:layout_marginTop="@dimen/dimen_small"
+                    android:layout_marginTop="@dimen/dimen_normal"
                     android:background="@color/colorLightGray" />
+
+                <LinearLayout
+                    android:weightSum="5"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <LinearLayout
+                        android:id="@+id/btnImage"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="@dimen/dimen_xxsmall"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/ic_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="@string/photo"
+                            android:layout_marginStart="@dimen/dimen_small"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:padding="@dimen/dimen_xxsmall"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_marginTop="@dimen/dimen_xxsmall"
+                            android:layout_marginBottom="@dimen/dimen_xxsmall"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorLightGray" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/btnLocation"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="@dimen/dimen_xxsmall"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@drawable/ic_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="@string/location"
+                            android:layout_marginStart="@dimen/dimen_small"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/contentNoPost"
+                android:visibility="gone"
+                tools:visibility="visible"
                 android:layout_marginTop="@dimen/dimen_normal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/followingCounter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/followings" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginTop="@dimen/dimen_small"
-                        android:background="@color/colorLightGray" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/followersCounter"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/followers" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginTop="@dimen/dimen_small"
-                        android:background="@color/colorLightGray" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/contentPost"
-            android:visibility="gone"
-            tools:visibility="visible"
-            android:background="@color/colorWhite"
-            android:paddingTop="@dimen/dimen_normal"
-            android:paddingLeft="@dimen/dimen_normal"
-            android:paddingRight="@dimen/dimen_normal"
-            android:paddingBottom="@dimen/dimen_xxsmall"
-            android:layout_marginTop="@dimen/dimen_normal"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="@string/post"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textStyle="bold"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:clickable="true"
-                android:foreground="?attr/selectableItemBackground"
-                android:id="@+id/btnComment"
-                android:gravity="center_vertical"
-                android:layout_marginTop="@dimen/dimen_normal"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivProfileComment"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:background="@color/colorWhite"
-                    android:padding="5dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_person"
-                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-                    app:strokeColor="@android:color/white"
-                    app:strokeWidth="3dp" />
-
-                <TextView
-                    android:layout_marginStart="@dimen/dimen_small"
-                    android:text="@string/what_are_you_thinking"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                <ImageView
+                    android:src="@drawable/ic_dot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="@dimen/dimen_normal"
-                android:background="@color/colorLightGray" />
-
-            <LinearLayout
-                android:weightSum="5"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-
-                <LinearLayout
-                    android:id="@+id/btnImage"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:padding="@dimen/dimen_xxsmall"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="0dp"
-                    android:layout_weight="2.5"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/ic_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:text="@string/photo"
-                        android:layout_marginStart="@dimen/dimen_small"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:padding="@dimen/dimen_xxsmall"
-                    android:gravity="center"
+                <TextView
+                    android:text="@string/without_results"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                    <View
-                        android:layout_width="0.5dp"
-                        android:layout_marginTop="@dimen/dimen_xxsmall"
-                        android:layout_marginBottom="@dimen/dimen_xxsmall"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorLightGray" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:visibility="gone"
-                    android:id="@+id/btnLocation"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:padding="@dimen/dimen_xxsmall"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="0dp"
-                    android:layout_weight="2.5"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/ic_location"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:text="@string/location"
-                        android:layout_marginStart="@dimen/dimen_small"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/contentNoPost"
-            android:visibility="gone"
-            tools:visibility="visible"
-            android:layout_marginTop="@dimen/dimen_normal"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:src="@drawable/ic_dot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:text="@string/without_results"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                tools:listitem="@layout/item_post"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
-            tools:listitem="@layout/item_post"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-</androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

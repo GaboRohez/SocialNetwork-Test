@@ -60,6 +60,7 @@
     <string name="delete">Delete</string>
     <string name="edit">Edit Post</string>
     <string name="update">Update</string>
+    <string name="create_post">Create Post</string>
 
 
 </resources>

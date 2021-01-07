@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -37,6 +38,7 @@ import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
 import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
+import xyz.gaborohez.socialnetwork.ui.edit_profile.EditProfileFragment;
 import xyz.gaborohez.socialnetwork.ui.post.view.PostFragment;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract;
 import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter;
@@ -84,6 +86,11 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
     private void setUpEvents() {
 
+        binding.swipe.setOnRefreshListener(() -> {
+            Log.d(TAG, "onRefresh: getCounters");
+            presenter.getCounters();
+        });
+
         binding.btnProfile.setOnClickListener(v -> {
             isProfile = true;
             showImageDialog();
@@ -94,6 +101,8 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
             showImageDialog();
         });
 
+        binding.btnCreatePost.setOnClickListener(this);
+        binding.btnEditProfile.setOnClickListener(this);
         binding.btnProfile.setOnClickListener(this);
         binding.btnCover.setOnClickListener(this);
         binding.btnComment.setOnClickListener(this);
@@ -104,6 +113,9 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.btnEditProfile:
+                addFragmentInParentActivity(new EditProfileFragment(), EditProfileFragment.class.getName(), R.id.contentMain);
+                break;
             case R.id.btnProfile:
                 isProfile = true;
                 showImageDialog();
@@ -112,6 +124,7 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
                 isProfile = false;
                 showImageDialog();
                 break;
+            case R.id.btnCreatePost:
             case R.id.btnComment:
             case R.id.btnImage:
             case R.id.btnLocation:

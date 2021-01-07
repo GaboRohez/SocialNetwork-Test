@@ -10,5 +10,6 @@
     <color name="colorLight">#3EA0AC</color>
     <color name="colorGray">#EDF7FF</color>
     <color name="colorLightGray">#C5C5C5</color>
+    <color name="colorGrayButton">#DCDBDB</color>
     <color name="colorBackground">#FAFAFA</color>
 </resources>

@@ -20,8 +20,8 @@ public class AppConstants {
     public static final String Authorization = "Authorization";
 
     //  url's
-    //public static final String BASE_URL = "http://10.0.2.2:3800/api/";  //emulator
-    public static final String BASE_URL = "http://192.168.100.12:3800/api/";
+    public static final String BASE_URL = "http://10.0.2.2:3800/api/";  //emulator
+    //public static final String BASE_URL = "http://192.168.100.12:3800/api/";
     public static final String BASE_IMAGE_URL = "http://192.168.100.12:3800/api/uploads/users/";
 
     //  regex
