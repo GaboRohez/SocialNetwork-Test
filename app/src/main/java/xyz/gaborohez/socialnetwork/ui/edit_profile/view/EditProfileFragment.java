@@ -1,4 +1,4 @@
-package xyz.gaborohez.socialnetwork.ui.profile.view;
+package xyz.gaborohez.socialnetwork.ui.edit_profile.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,12 +8,10 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,26 +19,19 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.shape.CornerFamily;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
 
 import xyz.gaborohez.socialnetwork.BuildConfig;
 import xyz.gaborohez.socialnetwork.R;
-import xyz.gaborohez.socialnetwork.data.models.Follow;
-import xyz.gaborohez.socialnetwork.data.models.Publications;
 import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
-import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
-import xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter;
+import xyz.gaborohez.socialnetwork.databinding.FragmentEditProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
-import xyz.gaborohez.socialnetwork.ui.edit_profile.view.EditProfileFragment;
-import xyz.gaborohez.socialnetwork.ui.post.view.PostFragment;
-import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract;
-import xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter;
+import xyz.gaborohez.socialnetwork.ui.edit_profile.presenter.EditProfileContract;
+import xyz.gaborohez.socialnetwork.ui.edit_profile.presenter.EditProfilePresenter;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 import xyz.gaborohez.socialnetwork.ui.utils.FileUtil;
 
@@ -49,118 +40,68 @@ import static xyz.gaborohez.socialnetwork.constants.AppConstants.EDIT_SUCCESS_CO
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE;
 
-public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, FragmentProfileBinding> implements ProfileContract.View, View.OnClickListener, PostAdapter.PostIn {
+public class EditProfileFragment extends BaseFragment<EditProfileContract.Presenter, FragmentEditProfileBinding> implements EditProfileContract.View, View.OnClickListener {
 
     private User user;
     private boolean isProfile;
     private String imageCover;
     private String imageProfile;
-    private PostAdapter adapter;
     private String mAbsolutePhotoPath;
-
-    private static final String TAG = "ProfileFragment";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         user = PreferencesManager.getInstance().getUser();
-        Log.d(TAG, "onCreate: "+user.toString());
-        presenter = new ProfilePresenter(this);
+        presenter = new EditProfilePresenter(this);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentProfileBinding.inflate(inflater, container, false);
+        binding = FragmentEditProfileBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setUpEvents();
-        setUpCover();
         setUpUserInfo();
-        presenter.getCounters();
+        setUpEvents();
+    }
+
+    private void setUpUserInfo() {
+        if (user.getCover() != null)
+            Glide.with(requireContext()).asBitmap().load(user.getCover()).into(binding.ivCover);
+
+        if (user.getImage() != null){
+            Glide.with(requireContext()).asBitmap().load(user.getImage()).into(binding.ivProfile);
+        }
+
     }
 
     private void setUpEvents() {
-
-        binding.swipe.setOnRefreshListener(() -> {
-            Log.d(TAG, "onRefresh: getCounters");
-            presenter.getCounters();
-        });
-
-        binding.btnProfile.setOnClickListener(v -> {
-            isProfile = true;
-            showImageDialog();
-        });
-
-        binding.btnCover.setOnClickListener(v -> {
-            isProfile = false;
-            showImageDialog();
-        });
-
-        binding.btnCreatePost.setOnClickListener(this);
-        binding.btnEditProfile.setOnClickListener(this);
-        binding.btnProfile.setOnClickListener(this);
-        binding.btnCover.setOnClickListener(this);
-        binding.btnComment.setOnClickListener(this);
-        binding.btnImage.setOnClickListener(this);
-        binding.btnLocation.setOnClickListener(this);
+        binding.btnEditProfilePhoto.setOnClickListener(this);
+        binding.btnEditCover.setOnClickListener(this);
+        binding.btnPersonalInfo.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnEditProfile:
-                openEditFragment();
-                break;
-            case R.id.btnProfile:
+            case R.id.btnEditProfilePhoto:
                 isProfile = true;
                 showImageDialog();
                 break;
-            case R.id.btnCover:
+            case R.id.btnEditCover:
                 isProfile = false;
                 showImageDialog();
                 break;
-            case R.id.btnCreatePost:
-            case R.id.btnComment:
-            case R.id.btnImage:
-            case R.id.btnLocation:
-                openFragmentComment();
-                break;
+            case R.id.btnPersonalInfo:
+
+                return;
             default:
                 return;
         }
-    }
-
-    private void openEditFragment() {
-        EditProfileFragment fragment = new EditProfileFragment();
-        fragment.setTargetFragment(this, EDIT_SUCCESS_CODE);
-        addFragmentInParentActivity(fragment, EditProfileFragment.class.getName(), R.id.contentMain);
-    }
-
-    private void setUpCover() {
-        float radius = getResources().getDimension(R.dimen.dimen_small);
-        binding.ivCover.setShapeAppearanceModel(binding.ivCover.getShapeAppearanceModel()
-                .toBuilder()
-                .setTopRightCorner(CornerFamily.ROUNDED,radius)
-                .setTopLeftCorner(CornerFamily.ROUNDED,radius)
-                .build());
-    }
-
-    private void setUpUserInfo() {
-        if (user.getCover() != null)
-            Glide.with(getContext()).asBitmap().load(user.getCover()).into(binding.ivCover);
-
-        if (user.getImage() != null){
-            Glide.with(getContext()).asBitmap().load(user.getImage()).into(binding.ivProfile);
-            Glide.with(getContext()).asBitmap().load(user.getImage()).into(binding.ivProfileComment);
-        }
-
-        binding.tvName.setText(String.format(getString(R.string.user_name), user.getName(), user.getSurname()));
-        binding.tvNickname.setText(user.getNick());
     }
 
     private void showImageDialog() {
@@ -207,12 +148,6 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
         }
     }
 
-    private void openFragmentComment() {
-        PostFragment fragment = new PostFragment();
-        fragment.setTargetFragment(this, POST_SUCCESS_CODE);
-        addFragmentInParentActivity(fragment, PostFragment.class.getName(), R.id.contentMain);
-    }
-
     private File createPhotoFile() throws IOException {
         File storageDir = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         String prefix = (new Date().toString()).replace(":", "").replace("?", "");
@@ -223,38 +158,6 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
         );
         mAbsolutePhotoPath = photoFile.getAbsolutePath();
         return photoFile;
-    }
-
-    @Override
-    public void setCounters(Follow result) {
-        binding.contentCounters.setVisibility(View.VISIBLE);
-        binding.contentPost.setVisibility(View.VISIBLE);
-
-        binding.postCounter.setText(String.valueOf(result.getPost()));
-        binding.followingCounter.setText(String.valueOf(result.getFollowing()));
-        binding.followersCounter.setText(String.valueOf(result.getFollowed()));
-
-        presenter.getPosts(1);
-    }
-
-    @Override
-    public void emptyPost() {
-        binding.contentNoPost.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void showPosts(List<Publications> publications) {
-        Log.d(TAG, "showPosts: "+publications);
-
-        binding.contentNoPost.setVisibility(View.GONE);
-
-        adapter = new PostAdapter(getContext(), publications, this);
-        binding.recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        binding.recycler.setHasFixedSize(true);
-        binding.recycler.setNestedScrollingEnabled(false);
-        binding.recycler.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-
     }
 
     @Override
@@ -295,20 +198,6 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
                     return;
                 }
                 break;
-            case POST_SUCCESS_CODE:
-                presenter.getPosts(1);
-                Log.d(TAG, "onActivityResult: success post");
-                break;
-            case EDIT_SUCCESS_CODE:
-                if (data.getBooleanExtra("isProfile", false)){
-                    String image = data.getStringExtra("image");
-                    Glide.with(requireContext()).load(Base64.decode(image, Base64.DEFAULT)).into(binding.ivProfile);
-                    Glide.with(requireContext()).load(Base64.decode(image, Base64.DEFAULT)).into(binding.ivProfileComment);
-                }else {
-                    String image = data.getStringExtra("image");
-                    Glide.with(requireContext()).load(Base64.decode(image, Base64.DEFAULT)).into(binding.ivCover);
-                }
-                break;
         }
     }
 
@@ -318,29 +207,23 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
             user.setImage(imageProfile);
             PreferencesManager.getInstance().saveUser(user);
             Glide.with(requireContext()).load(Base64.decode(imageProfile, Base64.DEFAULT)).into(binding.ivProfile);
-            Glide.with(requireContext()).load(Base64.decode(imageProfile, Base64.DEFAULT)).into(binding.ivProfileComment);
+
+            Intent intent = new Intent();
+            intent.putExtra("isProfile", true);
+            intent.putExtra("image", imageProfile);
+            getTargetFragment().onActivityResult(getTargetRequestCode(), EDIT_SUCCESS_CODE, intent);
+
         } else{
             user.setCover(imageCover);
             PreferencesManager.getInstance().saveUser(user);
             Glide.with(requireContext()).load(Base64.decode(imageCover, Base64.DEFAULT)).into(binding.ivCover);
+
+            Intent intent = new Intent();
+            intent.putExtra("isProfile", false);
+            intent.putExtra("image", imageCover);
+            getTargetFragment().onActivityResult(getTargetRequestCode(), EDIT_SUCCESS_CODE, intent);
         }
 
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void deletePost(String id, int position) {
-        presenter.deletePost(id, position);
-    }
-
-    @Override
-    public void editPost(Publications publications) {
-        addFragmentInParentActivity(PostFragment.newInstance(publications), PostFragment.class.getName(), R.id.contentMain);
-    }
-
-    @Override
-    public void postRemoved(int position, String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-        adapter.removePost(position);
     }
 }

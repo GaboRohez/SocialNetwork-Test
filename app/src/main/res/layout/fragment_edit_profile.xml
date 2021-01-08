@@ -1,117 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/colorWhite"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.edit_profile.EditProfileFragment">
+    tools:context=".ui.edit_profile.view.EditProfileFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:orientation="vertical"
-        android:paddingTop="@dimen/dimen_small"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:paddingStart="@dimen/dimen_normal"
         android:paddingEnd="@dimen/dimen_normal"
-        android:layout_width="match_parent"
-        android:layout_height="230dp">
+        tools:context=".ui.edit_profile.view.EditProfileFragment">
 
         <RelativeLayout
-            android:orientation="horizontal"
-            android:id="@+id/contentPhotoProfile"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimen_small"
+            android:layout_width="match_parent"
+            android:layout_height="230dp">
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:id="@+id/contentPhotoProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:text="@string/profile_photo"
+                    android:layout_centerVertical="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:id="@+id/btnEditProfilePhoto"
+                    android:textAllCaps="false"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/single_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </RelativeLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@color/colorWhite"
+                android:padding="5dp"
+                app:srcCompat="@color/colorPrimaryDark"
+                android:layout_below="@+id/contentPhotoProfile"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+            <View
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorLightGray"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimen_small"
+            android:layout_width="match_parent"
+            android:layout_height="230dp">
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:id="@+id/contentCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:text="@string/cover_photo"
+                    android:layout_centerVertical="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:id="@+id/btnEditCover"
+                    android:textAllCaps="false"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/single_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivCover"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/colorWhite"
+                android:padding="5dp"
+                app:srcCompat="@color/colorPrimaryDark"
+                android:layout_below="@+id/contentCover"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/roundedImageViewCover" />
+
+            <View
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorLightGray"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnPersonalInfo"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginTop="@dimen/dimen_normal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivPersonalInfo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/colorLightGray"
+                android:padding="3dp"
+                android:layout_marginEnd="@dimen/dimen_small"
+                app:srcCompat="@drawable/ic_person"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
             <TextView
+                android:id="@+id/tvTitlePersonal"
                 android:textStyle="bold"
-                android:text="Profile Photo"
-                android:layout_centerVertical="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                android:layout_toEndOf="@+id/ivPersonalInfo"
+                android:text="Personal information"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:id="@+id/btnEditProfilePhoto"
-                android:textAllCaps="false"
-                android:layout_alignParentEnd="true"
-                android:text="Edit"
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:layout_below="@+id/tvTitlePersonal"
+                android:layout_toEndOf="@+id/ivPersonalInfo"
+                android:text="Update your name, email address and more."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-
 
         </RelativeLayout>
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@color/colorWhite"
-            android:padding="5dp"
-            app:srcCompat="@color/colorPrimaryDark"
-            android:layout_below="@+id/contentPhotoProfile"
-            android:layout_centerHorizontal="true"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+    </LinearLayout>
 
-        <View
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorLightGray"
-            android:layout_width="wrap_content"
-            android:layout_height="0.5dp"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:orientation="vertical"
-        android:paddingTop="@dimen/dimen_small"
-        android:paddingStart="@dimen/dimen_normal"
-        android:paddingEnd="@dimen/dimen_normal"
-        android:layout_width="match_parent"
-        android:layout_height="230dp">
-
-        <RelativeLayout
-            android:orientation="horizontal"
-            android:id="@+id/contentCover"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textStyle="bold"
-                android:text="Cover Photo"
-                android:layout_centerVertical="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:id="@+id/btnEditCover"
-                android:textAllCaps="false"
-                android:layout_alignParentEnd="true"
-                android:text="Edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-        </RelativeLayout>
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivCover"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@color/colorWhite"
-            android:padding="5dp"
-            app:srcCompat="@color/colorPrimaryDark"
-            android:layout_below="@+id/contentCover"
-            android:layout_centerHorizontal="true"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/roundedImageViewCover" />
-
-        <View
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorLightGray"
-            android:layout_width="wrap_content"
-            android:layout_height="0.5dp"/>
-    </RelativeLayout>
-
-</LinearLayout>
+</ScrollView>

@@ -7,6 +7,7 @@ public class AppConstants {
     public static final int CAMERA_REQUEST_CODE = 100;
     public static final int GALLERY_REQUEST_CODE = 200;
     public static final int POST_SUCCESS_CODE = 001;
+    public static final int EDIT_SUCCESS_CODE = 002;
 
     //  response code
     public static final int EXPIRED = 401;
@@ -20,8 +21,8 @@ public class AppConstants {
     public static final String Authorization = "Authorization";
 
     //  url's
-    public static final String BASE_URL = "http://10.0.2.2:3800/api/";  //emulator
-    //public static final String BASE_URL = "http://192.168.100.12:3800/api/";
+    //public static final String BASE_URL = "http://10.0.2.2:3800/api/";  //emulator
+    public static final String BASE_URL = "http://192.168.100.12:3800/api/";
     public static final String BASE_IMAGE_URL = "http://192.168.100.12:3800/api/uploads/users/";
 
     //  regex

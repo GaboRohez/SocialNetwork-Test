@@ -62,5 +62,11 @@
     <string name="update">Update</string>
     <string name="create_post">Create Post</string>
 
+    <!-- edit profile -->
+    <string name="profile_photo">Profile Photo</string>
+    <string name="single_edit">Edit</string>
+    <string name="cover_photo">Cover Photo</string>
+    <string name="account_settings">Account Settings</string>
+
 
 </resources>

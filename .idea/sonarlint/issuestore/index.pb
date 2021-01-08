@@ -125,8 +125,6 @@ R
 "app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
 V
 &app/src/main/res/values/font_certs.xml,8\7\8721b09acc6dcb831485a758e527a36efbbce1ff
-R
-"app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
 ^
 .app/src/main/res/drawable/ic_menu_settings.xml,0\f\0fed60f0d33282461948d856f0b6399f41ee9384
 d
@@ -493,3 +491,11 @@ Xapp/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/post/PostsResp
 Kapp/src/main/java/xyz/gaborohez/socialnetwork/data/models/Publications.java,3\8\38ec338fcc4a7b14fc9d8bbc8b61f9a9809b3b59
 y
 Iapp/src/main/java/xyz/gaborohez/socialnetwork/ui/adapter/PostAdapter.java,7\3\735258f9437f32e2e8535ac7e9b7383d07d584e1
+ê
+`app/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/presenter/EditProfileContract.java,e\e\ee1fb2d9321105b54bde0bafb891c947c94fd56c
+ì
+capp/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/interactor/EditProfileInteractor.java,7\4\7456a4d1411f39d5a3064a2229d0bc3d41f7900a
+ë
+aapp/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/presenter/EditProfilePresenter.java,2\3\23ed5d5195fdd83c03543ce9fb7637d6b8a78f90
+ã
+[app/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/view/EditProfileFragment.java,b\2\b29be319a0a4838e445b015a98ec2caa4797ab16
