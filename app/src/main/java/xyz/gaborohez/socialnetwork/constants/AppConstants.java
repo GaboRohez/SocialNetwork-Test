@@ -8,6 +8,7 @@ public class AppConstants {
     public static final int GALLERY_REQUEST_CODE = 200;
     public static final int POST_SUCCESS_CODE = 001;
     public static final int EDIT_SUCCESS_CODE = 002;
+    public static final int PROFILE_SUCCESS_CODE = 003;
 
     //  response code
     public static final int EXPIRED = 401;

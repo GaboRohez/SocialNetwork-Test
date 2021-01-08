@@ -38,7 +38,6 @@ import xyz.gaborohez.socialnetwork.ui.utils.FileUtil;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.CAMERA_REQUEST_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.EDIT_SUCCESS_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST_CODE;
-import static xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE;
 
 public class EditProfileFragment extends BaseFragment<EditProfileContract.Presenter, FragmentEditProfileBinding> implements EditProfileContract.View, View.OnClickListener {
 

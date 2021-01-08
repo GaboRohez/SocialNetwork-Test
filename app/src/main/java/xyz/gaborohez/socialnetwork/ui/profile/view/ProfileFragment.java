@@ -48,6 +48,7 @@ import static xyz.gaborohez.socialnetwork.constants.AppConstants.CAMERA_REQUEST_
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.EDIT_SUCCESS_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE;
+import static xyz.gaborohez.socialnetwork.constants.AppConstants.PROFILE_SUCCESS_CODE;
 
 public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, FragmentProfileBinding> implements ProfileContract.View, View.OnClickListener, PostAdapter.PostIn {
 
@@ -255,6 +256,9 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
         binding.recycler.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
+        if (binding.swipe.isRefreshing())
+            binding.swipe.setRefreshing(false);
+
     }
 
     @Override
@@ -308,6 +312,8 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
                     String image = data.getStringExtra("image");
                     Glide.with(requireContext()).load(Base64.decode(image, Base64.DEFAULT)).into(binding.ivCover);
                 }
+
+                presenter.getPosts(1);
                 break;
         }
     }

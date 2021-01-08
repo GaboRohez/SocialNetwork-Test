@@ -2,6 +2,7 @@ package xyz.gaborohez.socialnetwork.ui.adapter;
 
 import android.content.Context;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+        Log.d(TAG, "onBindViewHolder: "+list.get(position).getUser().getImage());
         Glide.with(context)
                 .asBitmap()
                 .load(list.get(position).getUser().getImage())
