@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/colorBackground"
+    android:background="@color/colorWhite"
     tools:context=".ui.settings.SettingsFragment">
 
     <TextView
-        android:text="Menu"
+        android:text="@string/menu"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textStyle="bold"
         android:layout_margin="@dimen/dimen_normal"

@@ -117,8 +117,6 @@ Y
 ,app/src/main/res/layout/fragment_sign_in.xml,c\2\c22484f1c0d0bf56addb90255fc6fd65d167a2e8
 \
 ,app/src/main/res/layout/activity_session.xml,c\b\cb96b255ec316d2a2cb4659a0f212e2136481de0
-]
--app/src/main/res/layout/fragment_settings.xml,4\f\4fc5b33bc32b9fda83e2938a513ac8733024f0ff
 `
 0app/src/main/res/layout/loader_dialog_layout.xml,d\c\dca3b33ee439cef4175db67f29ba606c7256a895
 R
@@ -499,3 +497,5 @@ capp/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/interactor/EditPr
 aapp/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/presenter/EditProfilePresenter.java,2\3\23ed5d5195fdd83c03543ce9fb7637d6b8a78f90
 ã
 [app/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/view/EditProfileFragment.java,b\2\b29be319a0a4838e445b015a98ec2caa4797ab16
+è
+_app/src/main/java/xyz/gaborohez/socialnetwork/ui/personal_information/PersonalInfoFragment.java,7\4\745c3962955c20b17bdad264439f39281ccef1fb

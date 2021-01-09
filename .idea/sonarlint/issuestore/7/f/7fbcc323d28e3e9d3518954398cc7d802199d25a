@@ -1,9 +1,34 @@
 
-P
-java:S2387"3"binding" is the name of a field in "BaseFragment".(ô©‘Ò8¨¦”éæ.
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8±ş©œî.
 q
-java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants'.(ó§Ú¾üÿÿÿÿ8˜÷›ğæ.
+java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants'.(ó§Ú¾üÿÿÿÿ8˜÷›ğæ.
+l
+java:S1128"JRemove this unused import 'xyz.gaborohez.socialnetwork.ui.utils.AppUtils'.(ÄÙşïøÿÿÿÿ8±ş©œî.
 L
-java:S3740"/Provide the parametrized type for this generic.(€ìê8¨¦”éæ.
+java:S1128
+"0Remove this unused import 'android.util.Base64'.(ìÔ×[8â‹©œî.
 N
-java:S16028",Remove useless curly braces around statement(Ûğ¨Áüÿÿÿÿ8¨¦”éæ.
+java:S1128"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8±ş©œî.
+ƒ
+java:S1128""aRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.EDIT_SUCCESS_CODE'.(¦Ê™İøÿÿÿÿ8»õßœî.
+ƒ
+java:S1128$"aRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE'.(Ñ°±ûşÿÿÿÿ8»õßœî.
+D
+java:S1068)"'Remove this unused "TAG" private field.(öÒ’8»õßœî.
+L
+java:S3740'"/Provide the parametrized type for this generic.(€ìê8»õßœî.
+l
+java:S1128"JRemove this unused import 'xyz.gaborohez.socialnetwork.ui.utils.FileUtil'.(Í¹ŠŒÿÿÿÿÿ8±ş©œî.
+€
+java:S1128!"cRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.CAMERA_REQUEST_CODE'.(ñğ8»õßœî.
+
+java:S1128#"dRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST_CODE'.(ì»œ»8»õßœî.
+P
+java:S2387*"3"binding" is the name of a field in "BaseFragment".(ô©‘Ò8»õßœî.
+~
+java:S1128"aRemove this unused import 'xyz.gaborohez.socialnetwork.ui.edit_profile.view.EditProfileFragment'.(ÂÁÃŒ8‡Ê¢œî.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8»õßœî.
+N
+java:S1602J",Remove useless curly braces around statement(Ûğ¨Áüÿÿÿÿ8¨¦”éæ.

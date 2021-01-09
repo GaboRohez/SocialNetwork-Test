@@ -43,6 +43,7 @@
     <string name="user_created">User created successfully.</string>
 
     <!-- settings -->
+    <string name="menu">Menu</string>
     <string name="see_your_profile">See your profile</string>
 
     <!-- profile -->
@@ -67,6 +68,19 @@
     <string name="single_edit">Edit</string>
     <string name="cover_photo">Cover Photo</string>
     <string name="account_settings">Account Settings</string>
+
+    <!-- Personal Information -->
+    <string name="personal_information">Personal Information</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="manage_your_email">Manage your email</string>
+
+    <!-- Update information -->
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="edit_name_message">Remember that your name is visible to all other users, you can change it whenever you want, the username is the only one that cannot be changed.</string>
+    <string name="change_profile_name">Change profile name</string>
+    <string name="change_email">Change email address</string>
+    <style name="edit_email_message">You can change your email as many times as you want, but remember that if you change it now you must log in with the new email.</style>
 
 
 </resources>

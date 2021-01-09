@@ -32,6 +32,7 @@ import xyz.gaborohez.socialnetwork.databinding.FragmentEditProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.edit_profile.presenter.EditProfileContract;
 import xyz.gaborohez.socialnetwork.ui.edit_profile.presenter.EditProfilePresenter;
+import xyz.gaborohez.socialnetwork.ui.personal_information.PersonalInfoFragment;
 import xyz.gaborohez.socialnetwork.ui.utils.AppUtils;
 import xyz.gaborohez.socialnetwork.ui.utils.FileUtil;
 
@@ -96,7 +97,7 @@ public class EditProfileFragment extends BaseFragment<EditProfileContract.Presen
                 showImageDialog();
                 break;
             case R.id.btnPersonalInfo:
-
+                addFragmentInParentActivity(new PersonalInfoFragment(String.format(getString(R.string.user_name), user.getName(), user.getSurname())), PersonalInfoFragment.class.getName(), R.id.contentMain);
                 return;
             default:
                 return;

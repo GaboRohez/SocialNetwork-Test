@@ -1,3 +1,9 @@
 
+x
+java:S1905("VRemove this unnecessary cast to "org.sonar.java.resolve.Symbols$UnknownType@57d71c6d".(˜˜Óüÿÿÿÿ8²şË˜î.
 z
-java:S1128"]Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract'.(»ÎÆ8¢€ßöí.
+java:S1128"]Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract'.(»ÎÆ8¢€ßöí.
+t
+java:S1128"WRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.SUCCESS'.(×œ³×8²şË˜î.
+x
+java:S1905G"VRemove this unnecessary cast to "org.sonar.java.resolve.Symbols$UnknownType@57d71c6d".(˜˜Óüÿÿÿÿ8¦è×˜î.

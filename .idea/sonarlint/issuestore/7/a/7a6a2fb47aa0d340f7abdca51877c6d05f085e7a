@@ -1,21 +1,21 @@
 
-£
-java:S1186{"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ûİ¨İÿÿÿÿÿ8›ÔÌÂè.
-
-java:S1186|"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8›ÔÌÂè.
-X	java:S125‰"<This block of commented-out lines of code should be removed.(ŸÃì+8¨ı‘é.
-`
-java:S2259â"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8ƒ‚¼Áè.
 x
 java:S1128$"[Remove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding'.(Ã—÷ı8¡‰ÄÚè.
-n
-java:S1301Ş"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8é¦»Áè.
-k
-java:S1128&"NRemove this unused import 'xyz.gaborohez.socialnetwork.ui.base.BasePresenter'.(ô™ıĞ8¡‰ÄÚè.
-D	java:S131Ş""Add a default case to this switch.(×ö³–úÿÿÿÿ8é¦»Áè.
-{
-java:S1128*"^Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter'.(ØÄı¹8´ìÅÚè.
-D
-java:S10684"'Remove this unused "TAG" private field.(ûÖó8÷°Áè.
 z
 java:S1128)"]Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract'.(»ÎÆ8àÂÄÚè.
+X	java:S125‰"<This block of commented-out lines of code should be removed.(ŸÃì+8¨ı‘é.
+k
+java:S1128&"NRemove this unused import 'xyz.gaborohez.socialnetwork.ui.base.BasePresenter'.(ô™ıĞ8¡‰ÄÚè.
+`
+java:S2259â"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8ƒ‚¼Áè.
+
+java:S1186|"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(íÑíÍ8›ÔÌÂè.
+D	java:S131Ş""Add a default case to this switch.(×ö³–úÿÿÿÿ8é¦»Áè.
+n
+java:S1301Ş"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8é¦»Áè.
+D
+java:S10684"'Remove this unused "TAG" private field.(ûÖó8÷°Áè.
+£
+java:S1186{"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ûİ¨İÿÿÿÿÿ8›ÔÌÂè.
+{
+java:S1128*"^Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter'.(ØÄı¹8´ìÅÚè.

@@ -2,6 +2,8 @@ package xyz.gaborohez.socialnetwork.ui.personal_information;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,58 +11,36 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import xyz.gaborohez.socialnetwork.R;
+import xyz.gaborohez.socialnetwork.databinding.FragmentEditProfileBinding;
+import xyz.gaborohez.socialnetwork.databinding.FragmentPersonalInfoBinding;
+import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
+import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
+import xyz.gaborohez.socialnetwork.ui.update_user_info.UpdateInfoFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PersonalInfoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class PersonalInfoFragment extends Fragment {
+public class PersonalInfoFragment extends BaseFragment<BasePresenter, FragmentPersonalInfoBinding> {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private String name;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public PersonalInfoFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PersonalInfoFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PersonalInfoFragment newInstance(String param1, String param2) {
-        PersonalInfoFragment fragment = new PersonalInfoFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public PersonalInfoFragment(String name) {
+        this.name = name;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personal_info, container, false);
+        binding = FragmentPersonalInfoBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setUpEvents();
+        binding.tvName.setText(name);
+    }
+
+    private void setUpEvents() {
+        binding.btnName.setOnClickListener(v -> addFragmentInParentActivity(new UpdateInfoFragment(name, true), UpdateInfoFragment.class.getName(), R.id.contentMain));
+        binding.btnEmail.setOnClickListener(v -> addFragmentInParentActivity(new UpdateInfoFragment(name, true), UpdateInfoFragment.class.getName(), R.id.contentMain));
     }
 }
