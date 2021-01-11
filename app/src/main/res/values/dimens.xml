@@ -10,4 +10,5 @@
     <dimen name="dimen_profile_post">50dp</dimen>
     <dimen name="dimen_small_profile_post">40dp</dimen>
     <dimen name="dimen_image_comment">300dp</dimen>
+    <dimen name="dimen_height_edittext">50dp</dimen>
 </resources>

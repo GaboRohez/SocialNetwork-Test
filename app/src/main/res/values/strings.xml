@@ -80,7 +80,8 @@
     <string name="edit_name_message">Remember that your name is visible to all other users, you can change it whenever you want, the username is the only one that cannot be changed.</string>
     <string name="change_profile_name">Change profile name</string>
     <string name="change_email">Change email address</string>
-    <style name="edit_email_message">You can change your email as many times as you want, but remember that if you change it now you must log in with the new email.</style>
+    <string name="current_email">Current Email</string>
+    <string name="edit_email_message">You can change your email as many times as you want, but remember that if you change it now you must log in with the new email.</string>
 
 
 </resources>

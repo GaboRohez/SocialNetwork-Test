@@ -97,7 +97,7 @@ public class EditProfileFragment extends BaseFragment<EditProfileContract.Presen
                 showImageDialog();
                 break;
             case R.id.btnPersonalInfo:
-                addFragmentInParentActivity(new PersonalInfoFragment(String.format(getString(R.string.user_name), user.getName(), user.getSurname())), PersonalInfoFragment.class.getName(), R.id.contentMain);
+                addFragmentInParentActivity(new PersonalInfoFragment(String.format(getString(R.string.user_name), user.getName(), user.getSurname()), user.getEmail()), PersonalInfoFragment.class.getName(), R.id.contentMain);
                 return;
             default:
                 return;

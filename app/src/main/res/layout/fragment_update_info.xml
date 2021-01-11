@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBackground"
-    tools:context=".ui.update_user_info.UpdateInfoFragment">
+    tools:context=".ui.update_user_info.view.UpdateInfoFragment">
 
 
     <androidx.cardview.widget.CardView
@@ -22,6 +22,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/title"
                 android:padding="@dimen/dimen_small"
                 android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -35,6 +36,7 @@
                 android:layout_height="0.5dp"/>
 
             <TextView
+                android:id="@+id/tvSubtitle"
                 android:paddingStart="@dimen/dimen_small"
                 android:paddingTop="@dimen/dimen_small"
                 android:textStyle="bold"
@@ -45,6 +47,7 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:id="@+id/tvInfo"
                 android:paddingStart="@dimen/dimen_small"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 tools:text="@tools:sample/full_names"
@@ -52,6 +55,7 @@
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:id="@+id/tvMessage"
                 android:background="@color/colorGrayButton"
                 android:textColor="@color/colorBlack"
                 android:padding="@dimen/dimen_small"
@@ -63,12 +67,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <EditText
+                android:id="@+id/etName"
+                android:hint="@string/name"
+                android:inputType="textCapSentences"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:background="@drawable/simple_edittext_style"
+                android:layout_marginStart="@dimen/dimen_small"
+                android:layout_marginEnd="@dimen/dimen_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_height_edittext"/>
+
+            <TextView
+                android:id="@+id/tvMessageEmail"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:text="@string/email_error_message"
+                android:layout_marginStart="@dimen/dimen_small"
+                android:layout_marginEnd="@dimen/dimen_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/etSurname"
+                android:hint="@string/surname"
+                android:inputType="textCapSentences"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:background="@drawable/simple_edittext_style"
+                android:layout_marginTop="@dimen/dimen_normal"
+                android:layout_marginStart="@dimen/dimen_small"
+                android:layout_marginEnd="@dimen/dimen_small"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_height_edittext"/>
+
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAction"
                 android:textAllCaps="false"
+                android:enabled="false"
+                android:layout_marginTop="@dimen/dimen_normal"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_marginStart="@dimen/dimen_small"
                 android:layout_marginEnd="@dimen/dimen_small"
-                android:layout_marginBottom="@dimen/dimen_small"
+                android:layout_marginBottom="@dimen/dimen_normal"
                 android:text="@string/change_profile_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
