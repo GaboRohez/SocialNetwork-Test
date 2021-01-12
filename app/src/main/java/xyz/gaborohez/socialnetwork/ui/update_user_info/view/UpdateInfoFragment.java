@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.text.Editable;
 import android.text.InputType;
@@ -12,8 +13,10 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import xyz.gaborohez.socialnetwork.R;
+import xyz.gaborohez.socialnetwork.data.network.model.user.UpdateNameRequest;
 import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
 import xyz.gaborohez.socialnetwork.databinding.FragmentUpdateInfoBinding;
 import xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter;
@@ -92,6 +95,15 @@ public class UpdateInfoFragment extends BaseFragment<UpdateInfoContract.Presente
             }@Override
             public void afterTextChanged(Editable editable) { }
         });
+
+        binding.btnAction.setOnClickListener(v -> {
+            if (isName){
+                UpdateNameRequest request = new UpdateNameRequest();
+                request.setName(binding.etName.getText().toString().trim());
+                request.setSurname(binding.etSurname.getText().toString().trim());
+                presenter.updateName(request);
+            }
+        });
     }
 
     private void checkBtnEnable() {
@@ -99,5 +111,11 @@ public class UpdateInfoFragment extends BaseFragment<UpdateInfoContract.Presente
             binding.btnAction.setEnabled(!binding.etName.getText().toString().trim().isEmpty() && !binding.etSurname.getText().toString().trim().isEmpty());
         else
             binding.btnAction.setEnabled(!binding.etName.getText().toString().trim().isEmpty() && !AppUtils.isValidEmail(binding.etName.getText().toString().trim()));
+    }
+
+    @Override
+    public void updated(String message) {
+        getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
 }

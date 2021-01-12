@@ -17,6 +17,7 @@ import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.post.PostsResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.post.PostRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.signin.SignInRequest;
+import xyz.gaborohez.socialnetwork.data.network.model.user.UpdateNameRequest;
 
 public interface SocialNetworkAPI {
 
@@ -48,4 +49,7 @@ public interface SocialNetworkAPI {
 
     @DELETE("publication/{id}")
     Single<BaseResponse> deletePost(@Path("id") String id);
+
+    @PUT("user-name")
+    Single<BaseResponse> updateName(@Body UpdateNameRequest request);
 }

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
 
 import android.util.Base64;
 import android.util.Log;
@@ -36,7 +37,7 @@ import static xyz.gaborohez.socialnetwork.constants.AppConstants.GALLERY_REQUEST
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.POST_SUCCESS_CODE;
 import static xyz.gaborohez.socialnetwork.constants.AppConstants.PROFILE_SUCCESS_CODE;
 
-public class SettingsFragment extends BaseFragment {
+public class SettingsFragment extends BaseFragment implements FragmentManager.OnBackStackChangedListener {
 
     private static final String TAG = "SettingsFragment";
     private FragmentSettingsBinding binding;
@@ -53,6 +54,7 @@ public class SettingsFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         setUpEvents();
+        getActivity().getSupportFragmentManager().addOnBackStackChangedListener(this);
     }
 
     private void setUpUserInfo() {
@@ -90,5 +92,12 @@ public class SettingsFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         setUpUserInfo();
+    }
+
+    @Override
+    public void onBackStackChanged() {
+        int countStack = getActivity().getSupportFragmentManager().getBackStackEntryCount();
+        if (countStack == 0)
+            setUpUserInfo();
     }
 }

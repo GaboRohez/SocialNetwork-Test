@@ -499,3 +499,5 @@ aapp/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/presenter/EditPro
 [app/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/view/EditProfileFragment.java,b\2\b29be319a0a4838e445b015a98ec2caa4797ab16
 è
 _app/src/main/java/xyz/gaborohez/socialnetwork/ui/personal_information/PersonalInfoFragment.java,7\4\745c3962955c20b17bdad264439f39281ccef1fb
+é
+^app/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/view/UpdateInfoFragment.java,4\d\4d28b2932dbab90ab0c0f6a3b0106e109ab9d999

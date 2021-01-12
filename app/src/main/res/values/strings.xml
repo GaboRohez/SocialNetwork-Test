@@ -82,6 +82,7 @@
     <string name="change_email">Change email address</string>
     <string name="current_email">Current Email</string>
     <string name="edit_email_message">You can change your email as many times as you want, but remember that if you change it now you must log in with the new email.</string>
+    <string name="new_equal_current_name">The new name is equal to the current name.</string>
 
 
 </resources>

@@ -1,12 +1,12 @@
 
-q
-java:S5843"TSimplify this regular expression to reduce its complexity from 88 to the 20 allowed.(ÄÚ’8ö²ù˜î.
+j
+java:S1104"TMake isLogged a static final constant or non-public and provide accessors if needed.(–‘ğ£
 {	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ªÊú…ûÿÿÿÿ8âÂÍ»æ.
 W
 java:S1118":Add a private constructor to hide the implicit public one.(³ıƒ8á‹ÂÁè.
-D
-java:S1444".Make this "public static isLogged" field final(–‘ğ£
 G
 java:S5869"*Remove duplicates in this character class.(ÄÚ’8ö²ù˜î.
-j
-java:S1104"TMake isLogged a static final constant or non-public and provide accessors if needed.(–‘ğ£
+q
+java:S5843"TSimplify this regular expression to reduce its complexity from 88 to the 20 allowed.(ÄÚ’8ö²ù˜î.
+D
+java:S1444".Make this "public static isLogged" field final(–‘ğ£

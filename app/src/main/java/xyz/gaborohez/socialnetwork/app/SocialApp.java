@@ -51,5 +51,9 @@ public class SocialApp extends Application {
         public String getPasswordErrorMessage() {
             return resources.getString(R.string.password_not_match);
         }
+
+        public String getErrorNameEquals(){
+            return resources.getString(R.string.new_equal_current_name);
+        }
     }
 }
