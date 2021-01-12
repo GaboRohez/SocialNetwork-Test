@@ -109,12 +109,8 @@ U
 %app/src/main/res/font/nexa_family.xml,7\e\7ed54e9b108fc03d31c279aab2d6361c115ab3a8
 \
 ,app/src/main/res/color/my_color_selector.xml,1\9\195d2321dc7885aa2460995dacfd7316c7370af8
-[
-+app/src/main/res/layout/fragment_tabbed.xml,1\d\1de11399a04a6125dda44778612b65aa90ae7ced
 Y
 )app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
-\
-,app/src/main/res/layout/fragment_sign_in.xml,c\2\c22484f1c0d0bf56addb90255fc6fd65d167a2e8
 \
 ,app/src/main/res/layout/activity_session.xml,c\b\cb96b255ec316d2a2cb4659a0f212e2136481de0
 `
@@ -501,3 +497,11 @@ aapp/src/main/java/xyz/gaborohez/socialnetwork/ui/edit_profile/presenter/EditPro
 _app/src/main/java/xyz/gaborohez/socialnetwork/ui/personal_information/PersonalInfoFragment.java,7\4\745c3962955c20b17bdad264439f39281ccef1fb
 Ž
 ^app/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/view/UpdateInfoFragment.java,4\d\4d28b2932dbab90ab0c0f6a3b0106e109ab9d999
+Œ
+\app/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/user/UpdateNameRequest.java,0\8\0865884f540c97d0354c26a5a35267fd1c47dd45
+–
+fapp/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/interactor/UpdateInfoInteractor.java,3\1\31e2eee418801bcc8eadc9de228fc5e11dbaed50
+“
+capp/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/presenter/UpdateInfoContract.java,4\9\491e317a3ff0860326d5a7612a17889955066db1
+”
+dapp/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/presenter/UpdateInfoPresenter.java,7\e\7ed7ae67e5163c5239b8f20334b98b92e4ab3bee

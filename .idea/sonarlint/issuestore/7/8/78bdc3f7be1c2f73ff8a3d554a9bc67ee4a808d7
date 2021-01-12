@@ -1,7 +1,7 @@
 
-w
-java:S1104"\Make resourcesManager a static final constant or non-public and provide accessors if needed.(Š¬ıÎüÿÿÿÿ
 L
 java:S2696"6Make the enclosing method "static" or remove this set.(åş—Ò
 Q
 java:S1444"6Make this "public static resourcesManager" field final(Š¬ıÎüÿÿÿÿ
+w
+java:S1104"\Make resourcesManager a static final constant or non-public and provide accessors if needed.(Š¬ıÎüÿÿÿÿ

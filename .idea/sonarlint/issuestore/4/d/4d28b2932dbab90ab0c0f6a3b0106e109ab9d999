@@ -1,19 +1,19 @@
 
 e
-java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter'.(‰—ãÕ
+java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter'.(‰—ãÕ
 ó
-java:S1186R"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(≥–êâ
+java:S1186`"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(≥–êâ
+t
+java:S1128"^Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter'.(ÿƒ˝π
 s
-java:S1128"]Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract'.(ªŒè∆
+java:S1128"]Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract'.(ªŒè∆
 ó
-java:S1186["ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·¨á›
+java:S1186^"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·¨á›
+ó
+java:S1186U"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(≥–êâ
 q
-java:S1128"[Remove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding'.(√ó˜˝
+java:S1128"[Remove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding'.(√ó˜˝
 V
 java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(Çä©ì˘ˇˇˇˇ
 ó
-java:S1186]"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(≥–êâ
-t
-java:S1128"^Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter'.(ÿƒ˝π
-ó
-java:S1186P"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·¨á›
+java:S1186S"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·¨á›

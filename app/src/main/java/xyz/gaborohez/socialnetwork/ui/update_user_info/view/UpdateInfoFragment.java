@@ -102,6 +102,8 @@ public class UpdateInfoFragment extends BaseFragment<UpdateInfoContract.Presente
                 request.setName(binding.etName.getText().toString().trim());
                 request.setSurname(binding.etSurname.getText().toString().trim());
                 presenter.updateName(request);
+            }else {
+                presenter.updateEmail(binding.etName.getText().toString().trim());
             }
         });
     }
@@ -110,7 +112,7 @@ public class UpdateInfoFragment extends BaseFragment<UpdateInfoContract.Presente
         if (isName)
             binding.btnAction.setEnabled(!binding.etName.getText().toString().trim().isEmpty() && !binding.etSurname.getText().toString().trim().isEmpty());
         else
-            binding.btnAction.setEnabled(!binding.etName.getText().toString().trim().isEmpty() && !AppUtils.isValidEmail(binding.etName.getText().toString().trim()));
+            binding.btnAction.setEnabled(!binding.etName.getText().toString().trim().isEmpty() && AppUtils.isValidEmail(binding.etName.getText().toString().trim()));
     }
 
     @Override

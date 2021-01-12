@@ -67,4 +67,43 @@ public class UpdateInfoPresenter extends BasePresenter<UpdateInfoContract.View> 
                     }
                 }));
     }
+
+    @Override
+    public void updateEmail(String email) {
+        User user = PreferencesManager.getInstance().getUser();
+
+        if (user.getEmail().equals(email)){
+            view.showAlertDialog(SocialApp.resourcesManager.getErrorNameEquals());
+            return;
+        }
+
+        addSubscription(interactor.updateEmail(email)
+                .doOnSubscribe(disposable -> view.showLoader(true))
+                .doAfterTerminate(() -> view.showLoader(false))
+                .subscribe(response -> {
+                    if (response.getCode().equals(SUCCESS)){
+
+                        user.setEmail(email);
+                        PreferencesManager.getInstance().saveUser(user);
+
+                        view.updated(response.getMessage());
+                    }else  {
+                        view.showAlertDialog(response.getMessage());
+                    }
+                }, throwable -> {
+                    if (throwable instanceof HttpException) {
+                        HttpException error = (HttpException)throwable;
+
+                        if (error.response().code() == AppConstants.EXPIRED)
+                            view.expiredToken();
+                        else    // handle message
+                            view.showAlertDialog(handlerError(throwable));
+                    } else if (throwable instanceof SocketTimeoutException) {
+                        // handle timeout from Retrofit
+                        view.showAlertDialog(processError(throwable));
+                    }else {
+                        view.showAlertDialog(SocialApp.resourcesManager.getErrorServer());
+                    }
+                }));
+    }
 }

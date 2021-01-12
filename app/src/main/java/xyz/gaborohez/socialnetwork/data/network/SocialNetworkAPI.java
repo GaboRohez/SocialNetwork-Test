@@ -52,4 +52,7 @@ public interface SocialNetworkAPI {
 
     @PUT("user-name")
     Single<BaseResponse> updateName(@Body UpdateNameRequest request);
+
+    @PUT("user-email/{email}")
+    Single<BaseResponse> updateEmail(@Path("email") String email);
 }

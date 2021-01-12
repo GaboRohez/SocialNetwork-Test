@@ -22,4 +22,13 @@ public class UpdateInfoInteractor implements UpdateInfoContract.Interactor{
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
+
+    @Override
+    public Single<BaseResponse> updateEmail(String email) {
+        return RetrofitClient.api()
+                .create(SocialNetworkAPI.class)
+                .updateEmail(email)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 }

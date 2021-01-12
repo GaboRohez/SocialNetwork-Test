@@ -17,10 +17,14 @@ public interface UpdateInfoContract {
 
     interface Presenter {
         void updateName(UpdateNameRequest request);
+
+        void updateEmail(String email);
     }
 
     interface Interactor {
 
         Single<BaseResponse> updateName(UpdateNameRequest request);
+
+        Single<BaseResponse> updateEmail(String email);
     }
 }

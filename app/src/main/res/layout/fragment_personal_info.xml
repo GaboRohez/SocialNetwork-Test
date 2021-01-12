@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorWhite"
+    android:clickable="true"
     tools:context=".ui.personal_information.PersonalInfoFragment">
 
     <TextView
