@@ -1,7 +1,6 @@
 package xyz.gaborohez.socialnetwork.ui.session.login.presenter;
 
 import io.reactivex.Single;
-import io.reactivex.disposables.Disposable;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;

@@ -505,3 +505,9 @@ fapp/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/interactor/Up
 capp/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/presenter/UpdateInfoContract.java,4\9\491e317a3ff0860326d5a7612a17889955066db1
 ”
 dapp/src/main/java/xyz/gaborohez/socialnetwork/ui/update_user_info/presenter/UpdateInfoPresenter.java,7\e\7ed7ae67e5163c5239b8f20334b98b92e4ab3bee
+‹
+[app/src/main/java/xyz/gaborohez/socialnetwork/data/network/model/people/PeopleResponse.java,e\3\e3e8753d7a118a13df1cbcf408c7a40997f82af0
+{
+Kapp/src/main/java/xyz/gaborohez/socialnetwork/ui/adapter/PeopleAdapter.java,6\d\6d97e1d66b9b27092eeb6eb9259ac1f6c0aad5d0
+{
+Kapp/src/main/java/xyz/gaborohez/socialnetwork/ui/people/PeopleFragment.java,c\e\ce46185f336d1fa8f4e8f6ed1bf518aad9ac0f9c

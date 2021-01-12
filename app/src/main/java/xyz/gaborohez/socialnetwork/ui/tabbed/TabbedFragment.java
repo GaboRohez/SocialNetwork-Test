@@ -15,7 +15,7 @@ import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.databinding.FragmentTabbedBinding;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
-import xyz.gaborohez.socialnetwork.ui.profile.view.ProfileFragment;
+import xyz.gaborohez.socialnetwork.ui.people.PeopleFragment;
 import xyz.gaborohez.socialnetwork.ui.settings.SettingsFragment;
 
 public class TabbedFragment extends BaseFragment<BasePresenter, FragmentTabbedBinding> {
@@ -35,12 +35,12 @@ public class TabbedFragment extends BaseFragment<BasePresenter, FragmentTabbedBi
 
     private void setUpTabLayout() {
         //Add tabs icon with setIcon() or simple text with .setText()
-        binding.tabs.addTab(binding.tabs.newTab().setIcon(R.drawable.ic_menu_settings));
+        binding.tabs.addTab(binding.tabs.newTab().setIcon(R.drawable.ic_people));
         binding.tabs.addTab(binding.tabs.newTab().setIcon(R.drawable.ic_menu_settings));
 
         //Add fragments
         TabbedAdapter adapter = new TabbedAdapter(getFragmentManager(), 2);
-        adapter.addFragment(new ProfileFragment());
+        adapter.addFragment(new PeopleFragment(null));
         adapter.addFragment(new SettingsFragment());
 
         //Setting adapter

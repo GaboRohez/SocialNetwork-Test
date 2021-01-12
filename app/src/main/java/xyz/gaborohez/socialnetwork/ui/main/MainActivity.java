@@ -1,15 +1,22 @@
 package xyz.gaborohez.socialnetwork.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.fragment.app.FragmentManager;
 
+import java.util.List;
+
 import xyz.gaborohez.socialnetwork.R;
+import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.ui.base.BaseActivity;
 import xyz.gaborohez.socialnetwork.ui.tabbed.TabbedFragment;
 
 public class MainActivity extends BaseActivity implements FragmentManager.OnBackStackChangedListener {
+
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

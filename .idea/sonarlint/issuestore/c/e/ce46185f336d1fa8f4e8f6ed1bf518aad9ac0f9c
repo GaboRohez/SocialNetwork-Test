@@ -1,0 +1,17 @@
+
+l
+java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter'.(äÑ‹Í8í¡Ñ¿ï.
+Q
+java:S3740"/Provide the parametrized type for this generic.(ÚÙñ×şÿÿÿÿ8‹«¾ï.
+W
+java:S1128":Remove this unused import 'xyz.gaborohez.socialnetwork.R'.(Õ‹„ù8ÈÉ¾ï.
+X	java:S1259"<This block of commented-out lines of code should be removed.(÷‰‰õ8ğóÔ¿ï.
+]
+java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ8†ÒŒ¾ï.
+x
+java:S1128"[Remove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding'.(Ã—÷ı8Ñâ¾ï.
+E
+java:S1185,"(Remove this method to simply inherit it.(¡Œşø8ßääÀï.
+]	java:S125."<This block of commented-out lines of code should be removed.(’§‡‰ùÿÿÿÿ8ßääÀï.
+P
+java:S11441".Remove this unused private "getPeople" method.(µàÎ¥úÿÿÿÿ8ßääÀï.

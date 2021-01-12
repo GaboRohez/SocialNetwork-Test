@@ -2,12 +2,14 @@ package xyz.gaborohez.socialnetwork.data.models;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Base64;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class User implements Parcelable {
 
     @Expose
     @SerializedName("_id")
@@ -19,6 +21,46 @@ public class User {
     private String surname;
     private String name;
     private String cover;
+
+    protected User(Parcel in) {
+        id = in.readString();
+        image = in.readString();
+        role = in.readString();
+        email = in.readString();
+        nick = in.readString();
+        surname = in.readString();
+        name = in.readString();
+        cover = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(image);
+        dest.writeString(role);
+        dest.writeString(email);
+        dest.writeString(nick);
+        dest.writeString(surname);
+        dest.writeString(name);
+        dest.writeString(cover);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 
     public Bitmap getImage() {
         if (image != null){

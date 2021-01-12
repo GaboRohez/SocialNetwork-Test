@@ -1,19 +1,19 @@
 
-e
-java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter'.(äÑ‹Í
+—
+java:S1186U"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(³Ğ‰
+—
+java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á¬‡İ
 —
 java:S1186`"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(³Ğ‰
-t
-java:S1128"^Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter'.(ØÄı¹
+V
+java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ
+e
+java:S1128"ORemove this unused import 'xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter'.(äÑ‹Í
+q
+java:S1128"[Remove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding'.(Ã—÷ı
 s
 java:S1128"]Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfileContract'.(»ÎÆ
 —
 java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á¬‡İ
-—
-java:S1186U"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(³Ğ‰
-q
-java:S1128"[Remove this unused import 'xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding'.(Ã—÷ı
-V
-java:S1128";Remove this unused import 'androidx.fragment.app.Fragment'.(‚Š©“ùÿÿÿÿ
-—
-java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á¬‡İ
+t
+java:S1128"^Remove this unused import 'xyz.gaborohez.socialnetwork.ui.profile.presenter.ProfilePresenter'.(ØÄı¹

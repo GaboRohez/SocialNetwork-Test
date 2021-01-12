@@ -14,6 +14,7 @@ import xyz.gaborohez.socialnetwork.data.network.model.imageprofile.UpdateImageRe
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.login.LogInResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.login.UserInfoResponse;
+import xyz.gaborohez.socialnetwork.data.network.model.people.PeopleResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.post.PostsResponse;
 import xyz.gaborohez.socialnetwork.data.network.model.post.PostRequest;
 import xyz.gaborohez.socialnetwork.data.network.model.signin.SignInRequest;
@@ -55,4 +56,7 @@ public interface SocialNetworkAPI {
 
     @PUT("user-email/{email}")
     Single<BaseResponse> updateEmail(@Path("email") String email);
+
+    @GET("users")
+    Single<PeopleResponse> getPeople();
 }

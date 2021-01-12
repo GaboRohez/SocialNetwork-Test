@@ -1,12 +1,12 @@
 
+†
+java:S11283"dRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.PROFILE_SUCCESS_CODE'.(Êã†¼ùÿÿÿÿ8 Úßœî.
+`
+java:S2259³"BA "NullPointerException" could be thrown; "data" is nullable here.(—æ°î8Ÿ”™î.
 u
 java:S3776‰"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(™­²©ùÿÿÿÿ8ÙÊíëè.
 D	java:S131Š""Add a default case to this switch.(×ö³–úÿÿÿÿ8ÙÊíëè.
 `
 java:S2259"BA "NullPointerException" could be thrown; "data" is nullable here.(Ì°—Î8ÙÊíëè.
-`
-java:S2259³"BA "NullPointerException" could be thrown; "data" is nullable here.(—æ°î8Ÿ”™î.
-†
-java:S11283"dRemove this unused import 'xyz.gaborohez.socialnetwork.constants.AppConstants.PROFILE_SUCCESS_CODE'.(Êã†¼ùÿÿÿÿ8 Úßœî.
 9
 java:S3626«"Remove this redundant jump.(ûÁİ…8ÙÊíëè.

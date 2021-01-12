@@ -1,6 +1,17 @@
 
 m
-java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8¹¬Äêæ.
+java:S1301$"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8¹¬Äêæ.
 K
-java:S3740"/Provide the parametrized type for this generic.(ÚœË8¹¬Äêæ.
-X	java:S110"=This class has 10 parents which is greater than 5 authorized.(ÚœË8¹¬Äêæ.
+java:S3740"/Provide the parametrized type for this generic.(ÚœË8¹¬Äêæ.
+X	java:S110"=This class has 10 parents which is greater than 5 authorized.(ÚœË8¹¬Äêæ.
+M
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÓõÖÀï.
+O
+java:S1128"3Remove this unused import 'android.content.Intent'.(³ğ‹G8ÓõÖÀï.
+k
+java:S1128"IRemove this unused import 'xyz.gaborohez.socialnetwork.data.models.User'.(ı°êœıÿÿÿÿ8ÓõÖÀï.
+O
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ÓõÖÀï.
+D
+java:S1068"'Remove this unused "TAG" private field.(Ö—ÈÚ8ÓõÖÀï.

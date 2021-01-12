@@ -1,6 +1,8 @@
 
-R
-java:S1128"0Remove this unused import 'io.reactivex.Single'.(úÃ¶“øÿÿÿÿ8»àëžï.
+x
+java:S1905_"VRemove this unnecessary cast to "org.sonar.java.resolve.Symbols$UnknownType@131e0484".(˜˜ŽÓüÿÿÿÿ8šèù¼ï.
 {
 java:S1128
 "YRemove this unused import 'xyz.gaborohez.socialnetwork.data.network.global.BaseResponse'.(Ê™™ ýÿÿÿÿ8»àëžï.
+R
+java:S1128"0Remove this unused import 'io.reactivex.Single'.(úÃ¶“øÿÿÿÿ8»àëžï.
