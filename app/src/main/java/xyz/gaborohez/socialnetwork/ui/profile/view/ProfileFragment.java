@@ -348,5 +348,6 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
     public void postRemoved(int position, String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         adapter.removePost(position);
+        presenter.getCounters();
     }
 }
