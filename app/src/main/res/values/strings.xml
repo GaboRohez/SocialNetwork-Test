@@ -68,6 +68,7 @@
     <string name="single_edit">Edit</string>
     <string name="cover_photo">Cover Photo</string>
     <string name="account_settings">Account Settings</string>
+    <string name="update_your_name_email_address_and_more">Update your name, email address and more.</string>
 
     <!-- Personal Information -->
     <string name="personal_information">Personal Information</string>

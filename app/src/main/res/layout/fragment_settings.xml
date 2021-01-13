@@ -38,7 +38,8 @@
                 android:scaleType="centerCrop"
                 android:layout_marginStart="@dimen/dimen_normal"
                 android:layout_marginEnd="@dimen/dimen_normal"
-                android:background="@color/colorPrimaryVariant"
+                android:background="@color/colorGrayButton"
+                android:src="@drawable/ic_person"
                 app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
 
             <TextView

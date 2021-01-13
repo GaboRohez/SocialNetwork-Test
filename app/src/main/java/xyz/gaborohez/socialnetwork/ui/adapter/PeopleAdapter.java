@@ -39,10 +39,16 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Glide.with(context)
-                .asBitmap()
-                .load(list.get(position).getImage())
-                .into(holder.binding.ivProfile);
+        if (list.get(position).getImage() != null){
+            Glide.with(context)
+                    .asBitmap()
+                    .load(list.get(position).getImage())
+                    .into(holder.binding.ivProfile);
+        }else {
+            Glide.with(context)
+                    .load(context.getDrawable(R.drawable.ic_person))
+                    .into(holder.binding.ivProfile);
+        }
 
         holder.binding.tvName.setText(String.format(context.getString(R.string.user_name), list.get(position).getName(), list.get(position).getSurname()));
 

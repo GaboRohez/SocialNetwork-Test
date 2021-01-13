@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.util.Log;
@@ -14,12 +14,9 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import xyz.gaborohez.socialnetwork.R;
 import xyz.gaborohez.socialnetwork.data.models.User;
 import xyz.gaborohez.socialnetwork.databinding.FragmentPeopleBinding;
-import xyz.gaborohez.socialnetwork.databinding.FragmentProfileBinding;
 import xyz.gaborohez.socialnetwork.ui.adapter.PeopleAdapter;
-import xyz.gaborohez.socialnetwork.ui.adapter.PostAdapter;
 import xyz.gaborohez.socialnetwork.ui.base.BaseFragment;
 import xyz.gaborohez.socialnetwork.ui.base.BasePresenter;
 
@@ -34,6 +31,11 @@ public class PeopleFragment extends BaseFragment<BasePresenter, FragmentPeopleBi
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentPeopleBinding.inflate(inflater, container, false);
@@ -43,10 +45,11 @@ public class PeopleFragment extends BaseFragment<BasePresenter, FragmentPeopleBi
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //getPeople();
+        setPeople();
     }
 
-    private void getPeople() {
+    private void setPeople() {
+
         PeopleAdapter adapter = new PeopleAdapter( list, requireContext(), this);
         binding.recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         binding.recycler.setHasFixedSize(true);

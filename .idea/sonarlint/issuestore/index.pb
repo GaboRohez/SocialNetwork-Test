@@ -195,8 +195,6 @@ W
 'app/src/main/res/anim/exit_to_right.xml,6\4\64a04e1dbd11cfbc80e75edc42164b31acc99857
 V
 &app/src/main/res/anim/exit_to_left.xml,1\7\170638d1ac31ddb24d0e0e4cf4e78a154b4b0ae6
-W
-'app/src/main/res/drawable/ic_person.xml,4\f\4f1c53a33c55375c8897e53f5d0c8aff54ffc865
 g
 7app/build/intermediates/runtime_symbol_list/debug/R.txt,c\e\ce0984e61a176cd894d1d75ada0e7d0edda94a6f
 …

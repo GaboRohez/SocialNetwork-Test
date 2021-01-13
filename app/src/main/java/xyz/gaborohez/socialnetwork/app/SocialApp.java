@@ -1,6 +1,7 @@
 package xyz.gaborohez.socialnetwork.app;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.res.Resources;
 
 import xyz.gaborohez.socialnetwork.R;
@@ -12,12 +13,14 @@ import xyz.gaborohez.socialnetwork.data.prefs.PreferencesManager;
  */
 public class SocialApp extends Application {
 
+    public static Context context;
     public static ResourcesManager resourcesManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
         PreferencesManager.getInstance(this);
+        context = getBaseContext();
         resourcesManager = new ResourcesManager(getResources());
     }
 

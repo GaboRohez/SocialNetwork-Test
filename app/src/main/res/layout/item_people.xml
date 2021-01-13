@@ -20,7 +20,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="@dimen/dimen_small"
-            android:background="@color/colorWhite"
+            android:background="@color/colorGrayButton"
             android:padding="3dp"
             app:srcCompat="@color/colorPrimaryDark"
             tools:src="@tools:sample/avatars"
@@ -49,7 +49,7 @@
     <Button
         android:id="@+id/btnViewProfile"
         android:layout_marginTop="@dimen/dimen_normal"
-        android:backgroundTint="@color/colorGrayButton"
+        android:backgroundTint="#E7F1F6"
         android:textColor="@color/colorBlack"
         android:textAllCaps="false"
         android:text="@string/view_profile"

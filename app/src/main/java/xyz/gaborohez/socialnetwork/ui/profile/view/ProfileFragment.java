@@ -240,6 +240,9 @@ public class ProfileFragment extends BaseFragment<ProfileContract.Presenter, Fra
 
     @Override
     public void emptyPost() {
+        if (binding.swipe.isRefreshing())
+            binding.swipe.setRefreshing(false);
+
         binding.contentNoPost.setVisibility(View.VISIBLE);
     }
 
